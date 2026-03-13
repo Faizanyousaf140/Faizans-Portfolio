@@ -1,7 +1,4 @@
-Here is your **updated README with your real links inserted and formatted properly**.
-You can **copy-paste directly into your GitHub `README.md`**.
 
----
 
 # 🚀 **Faizan Yousaf — Portfolio Website**
 
