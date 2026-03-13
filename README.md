@@ -16,8 +16,7 @@ The website is designed with **clean UI/UX, smooth animations, fast performance,
 # 🌐 **Live Repository**
 
 👉 **View Portfolio Live**
-*Deployed Version Live -> [Link]([url](https://faizanyousafs-portfolio.vercel.app/))
-
+**Deployed Version Live** -> [Link](https://faizanyousafs-portfolio.vercel.app/)
 🔗 **GitHub Repository**
 [https://github.com/Faizanyousaf140/Faizans-Portfolio](https://github.com/Faizanyousaf140/Faizans-Portfolio)
 
