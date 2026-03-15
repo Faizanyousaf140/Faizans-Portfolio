@@ -180,6 +180,89 @@ export const mockData = {
       image: "/assets/skillifyzone_logo.jpg",
     },
   ],
+  teachingAssistantships: [
+    {
+      id: 1,
+      role: "Teaching Assistant (Computer Networks Lab)",
+      institution: "FAST - NUCES CFD Campus",
+      duration: "January 2025 - June 2025",
+      status: "Completed",
+      studentsAssisted: 40,
+      tasks: [
+        "Assisted in preparing and delivering 15 lab tutorials",
+        "Supported 1 lab project and helped students with quizzes and CP work",
+      ],
+      topics: ["Packet Analysis", "Network Simulation", "Socket Programming", "Routing Labs"],
+      assessments: {
+        quizzes: 2,
+      },
+    },
+    {
+      id: 2,
+      role: "Teaching Assistant (Computer Networks)",
+      institution: "FAST - NUCES CFD Campus",
+      duration: "August 2025 - January 2026",
+      status: "Completed",
+      studentsAssisted: 50,
+      tasks: [
+        "Designed and assisted with assignment and quiz preparation",
+        "Conducted support sessions and clarified networking concepts",
+      ],
+      topics: [
+        "OSI Model",
+        "TCP/IP",
+        "Routing",
+        "Subnetting",
+        "Transport Protocols",
+      ],
+      assessments: {
+        quizzes: 7,
+        assignments: 5,
+        cps: 4,
+      },
+    },
+    {
+      id: 3,
+      role: "Teaching Assistant (Design and Analysis of Algorithms)",
+      institution: "FAST - NUCES CFD Campus",
+      duration: "August 2025 - January 2026",
+      status: "Completed",
+      studentsAssisted: 40,
+      tasks: [
+        "Assisted in quiz and assignment design",
+        "Supported students in complexity analysis and problem-solving strategies",
+      ],
+      topics: [
+        "Divide and Conquer",
+        "Greedy Algorithms",
+        "Dynamic Programming",
+        "Graph Algorithms",
+        "Time and Space Complexity",
+      ],
+      assessments: {
+        quizzes: 6,
+        assignments: 6,
+      },
+    },
+    {
+      id: 4,
+      role: "Teaching Assistant (Web Programming)",
+      institution: "FAST - NUCES CFD Campus",
+      duration: "January 2026 - June 2026",
+      status: "In Progress",
+      studentsAssisted: 45,
+      tasks: [
+        "Assisting labs and practical sessions for frontend and backend topics",
+        "Guiding students on assignments and mini-project implementations",
+      ],
+      topics: ["HTML", "CSS", "JavaScript", "React", "REST APIs","MERN Stack Development"],
+      assessments: {
+        quizzes: 6,
+        assignments: 6,
+        cps: 5,
+      },
+    },
+  ],
   education: [
     {
       degree: "Bachelor of Computer Science",

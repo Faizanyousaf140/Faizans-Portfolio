@@ -6,6 +6,12 @@ export default function About({ data }) {
   const [leftRef, leftVisible] = useScrollAnimation(0.2);
   const [rightRef, rightVisible] = useScrollAnimation(0.2);
   const [toolsRef, toolsVisible] = useScrollAnimation(0.3);
+
+  const phoneText = data?.profile?.phone || "+92-313-7263488";
+  const primaryPhone = phoneText.split(",")[0].trim();
+  const whatsappNumber = primaryPhone.replace(/[^\d]/g, "");
+  const whatsappHref = whatsappNumber ? `https://wa.me/${whatsappNumber}` : undefined;
+
   return (
     <section
       id="about"
@@ -109,8 +115,10 @@ export default function About({ data }) {
                 },
                 {
                   icon: Phone,
-                  text: data?.profile?.phone || "+92-313-7263488",
+                  text: phoneText,
                   gradient: "from-dark-700 to-dark-500",
+                  href: whatsappHref,
+                  external: true,
                 },
               ].map((item, idx) => (
                 <div
@@ -130,6 +138,8 @@ export default function About({ data }) {
                   {item.href ? (
                     <a
                       href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
                       className="hover:text-dark-800 transition-colors"
                     >
                       {item.text}

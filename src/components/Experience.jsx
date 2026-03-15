@@ -153,7 +153,7 @@
 //   );
 // }
 import React from "react";
-import { Briefcase, GraduationCap, Award, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Calendar, BookOpen, Users } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Experience({ data }) {
@@ -163,6 +163,7 @@ export default function Experience({ data }) {
   const [certRef, certVisible] = useScrollAnimation(0.1);
 
   const experiences = data?.experience || [];
+  const teachingAssistantships = data?.teachingAssistantships || [];
   const education = data?.education || [];
   const certifications = data?. certifications || [];
 
@@ -338,8 +339,59 @@ export default function Experience({ data }) {
             </div>
           </div>
 
-          {/* Right Column - Certifications */}
+          {/* Right Column - TA + Certifications */}
           <div ref={certRef}>
+            {teachingAssistantships.length > 0 && (
+              <div className="mb-10">
+                <h3 className="text-3xl font-bold text-dark-800 mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-dark-700 to-dark-600 flex items-center justify-center">
+                    <BookOpen className="text-white" size={20} />
+                  </div>
+                  Teaching Assistantships
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {teachingAssistantships.map((ta, index) => (
+                    <div
+                      key={ta.id || index}
+                      className={`bg-gradient-to-br from-light-50 to-light-100 rounded-2xl p-5 border-2 border-light-200 hover:border-dark-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
+                        certVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+                      }`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h4 className="text-lg font-bold text-dark-800 leading-snug">{ta.role}</h4>
+                        <span className="px-3 py-1 bg-dark-800 text-white text-xs font-semibold rounded-full">
+                          {ta.status}
+                        </span>
+                      </div>
+                      <p className="text-gray-700 text-sm font-medium mb-1">{ta.institution}</p>
+                      <p className="text-gray-600 text-xs mb-2 flex items-center gap-2">
+                        <Calendar size={14} />
+                        {ta.duration}
+                      </p>
+
+                      <div className="text-gray-700 text-sm mb-2 flex items-center gap-2">
+                        <Users size={14} />
+                        Assisted {ta.studentsAssisted} students
+                      </div>
+
+                      {(ta.assessments?.quizzes > 0 || ta.assessments?.assignments > 0 || ta.assessments?.cps > 0) && (
+                        <p className="text-gray-700 text-sm mb-2">
+                          Designed/assisted: {ta.assessments.quizzes} quizzes, {ta.assessments.assignments} assignments, {ta.assessments.cps} CPs
+                        </p>
+                      )}
+
+                      {ta.topics?.length > 0 && (
+                        <p className="text-gray-600 text-xs">
+                          Focus: {ta.topics.slice(0, 3).join(", ")}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <h3 className="text-3xl font-bold text-dark-800 mb-8 flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-dark-600 to-dark-500 flex items-center justify-center">
                 <Award className="text-white" size={20} />
@@ -391,9 +443,8 @@ export default function Experience({ data }) {
                   </div>
                   Co-curricular Activities
                 </h3>
-                <div className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   {data.activities.map((act) => {
-                    const isYDPC = String(act.title + act.organization).toLowerCase().includes("ydp") || String(act.organization).toLowerCase().includes("youth");
                     return (
                       <div key={act.id} className="bg-gradient-to-br from-light-50 to-light-100 rounded-2xl p-6 border-2 border-light-200 hover:border-dark-700 hover:shadow-xl transition-all duration-300">
                         <div className="flex items-start justify-between gap-4">
