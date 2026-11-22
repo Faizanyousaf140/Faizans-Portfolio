@@ -10,7 +10,8 @@ export function Hero() {
           <div className="availability"><span className="status-dot"/> OPEN TO ENGINEERING OPPORTUNITIES <span className="availability-line" /></div>
           <div className="hero-intro"><span className="eyebrow-line" /> MUHAMMAD FAIZAN YOUSAF</div>
           <h1 id="hero-title">Building for <span className="hero-emphasis">the web.</span><br />Thinking <span className="hero-outline">beyond.</span></h1>
-          <p className="hero-lede">Full-stack software engineering meets practical AI. I turn ideas into usable products, from <strong>Next.js interfaces</strong> and backend APIs to <strong>LLM-powered systems</strong> that are tested with care.</p>
+          <p className="hero-role">{profile.role}</p>
+          <p className="hero-lede">I build <strong>full-stack AI products</strong>, from Next.js interfaces and backend APIs to <strong>LLM applications, NLP models and evaluation harnesses</strong>. My work connects product engineering with practical machine learning.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <ArrowUpRight size={18}/></a>
             <a className="button button-outline" href={profile.resume} download="Faizan_Yousaf_Software_Engineer.pdf">Download résumé <ArrowUpRight size={16}/></a>
@@ -30,7 +31,7 @@ export function Hero() {
             <div className="portrait-bottom"><span>ENGINEERING</span><span className="portrait-star"><Sparkles size={15}/></span><span>+ INTELLIGENCE</span></div>
           </div>
           <div className="floating-chip floating-chip-top"><span className="chip-icon">&lt;/&gt;</span><div><small>BUILDING WITH</small><strong>Next.js / TypeScript</strong></div></div>
-          <div className="floating-chip floating-chip-bottom"><span className="chip-symbol">✳</span><div><small>INTEREST AREA</small><strong>AI systems & evaluation</strong></div></div>
+          <div className="floating-chip floating-chip-bottom"><span className="chip-symbol">✳</span><div><small>BUILDING & EVALUATING</small><strong>LLMs / NLP / AI agents</strong></div></div>
           <div className="orbit-mark orbit-mark-one" aria-hidden="true">+</div><div className="orbit-mark orbit-mark-two" aria-hidden="true">✳</div>
         </div>
       </div>

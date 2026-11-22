@@ -1,10 +1,30 @@
-# Faizan Yousaf — Next.js portfolio
+# Faizan Yousaf — Full-Stack AI, ML & NLP Engineer
 
-The portfolio uses Next.js 16 App Router, TypeScript and React 19. The green editorial design, project artwork, interactions and reduced-motion support are preserved. Content lives in `data/portfolio.ts`.
+[Portfolio](https://faizanyousafs-portfolio.vercel.app) · [GitHub](https://github.com/Faizanyousaf140) · [LinkedIn](https://www.linkedin.com/in/faizan-yousaf1/) · [Hugging Face](https://huggingface.co/Faizan11112/spaces)
 
-## Run locally
+I build full-stack AI products, LLM applications and NLP systems, connecting responsive interfaces and Python APIs with retrieval, model fine-tuning and evaluation. I am a FAST-NUCES computer science graduate and Software Engineer at Deaimer, contributing coding tasks, reproducible environments and automated verifiers to frontier-model training and evaluation workflows.
 
-Use Node.js 22 or newer (minimum 20.9).
+## Selected work
+
+| Area | Projects |
+| --- | --- |
+| Full-stack AI | AI Knowledge OS: contextual RAG chat, semantic search, APIs and background embedding jobs |
+| Multimodal fine-tuning | Document-to-Markdown VLM: Qwen2-VL-2B with QLoRA/PEFT and Gradio |
+| Speech and NLP | VerbatimAI: Whisper transcription, summarization and semantic retrieval |
+| NLP | Urdu Transformer chatbot, BERT feedback classification, T5/BART summarization, image captioning and Clinical Notes RAG |
+| Generative vision | DDPM, DCGAN/WGAN-GP, Pix2Pix/CycleGAN and MAE/ViT |
+| Applied ML | Loan Approval Predictor: data preparation, classifier comparison and prediction interfaces |
+| Product and backend | RentEase PK, Fuel Route Optimizer, ELD Trip Planner, Craftopia.pk and authentication/CI automation |
+
+The site links 20 projects with GenAI/LLM, NLP, AI/ML, full-stack, backend and testing filters. The Urdu-to-Roman-Urdu study is attributed as an adapted/forked academic project. AgentQA Cloud is marked in development, with planned features identified explicitly.
+
+At Deaimer, I work on coding-task preparation, Docker/Linux harnesses, tool calling, reference solutions, automated verification and failure analysis. Models worked with include GPT-6 Astra, GPT-5.6 Sol, Claude Opus 5, Opus 5.5 and Sonnet 5.5; tools include Codex and Claude Code. The role describes contributions through training/evaluation tasks and harnesses. Three published Deaimer research perspectives are linked with their PDFs.
+
+## Stack and development
+
+Next.js 16 App Router, React 19, TypeScript, Lucide, EmailJS and PostHog. The green design, animations, responsive images and reduced-motion support are preserved. Content lives in `data/portfolio.ts`, UI in `components/`, and styling in `app/globals.css`.
+
+Use Node.js 22 or newer (minimum 20.9):
 
 ```bash
 npm ci
@@ -12,44 +32,39 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. `.env.local` is ignored by Git. Never commit environment files or put private API keys in variables beginning with `NEXT_PUBLIC_`.
+Open http://localhost:3000.
 
-## Configuration
+## Environment configuration
 
-Set these in `.env.local` for development and in the Vercel project environment for production:
+Set these in ignored `.env.local` for development and in Vercel for production:
 
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical production URL, including https:// |
-| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | Existing EmailJS service |
-| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | Existing EmailJS template |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | EmailJS service identifier |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | EmailJS template identifier |
 | `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | EmailJS browser public key |
-| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog public project ingestion key |
-| `NEXT_PUBLIC_POSTHOG_HOST` | Existing PostHog ingestion host |
+| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog public ingestion key |
+| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog ingestion host |
 
-EmailJS browser identifiers and the PostHog ingestion key are public identifiers by design. Next.js embeds `NEXT_PUBLIC_` values in the browser bundle at build time. Private EmailJS keys and PostHog personal API keys must never go in these fields. Changing production values requires a rebuild.
+These client identifiers are public by design and embedded at build time. Private API keys must never use `NEXT_PUBLIC_`. Environment files stay out of Git; `.env.example` contains placeholders only. Rebuild after changing production values.
 
-The contact form retains the old template parameters: `from_name`, `from_email`, `subject`, and `message`, with `reply_to` also supplied. It validates required fields, prevents duplicate sends, includes a honeypot and local send throttling, and reports success or failure without discarding a failed message. Direct email remains available if configuration or sending fails. Confirm the EmailJS template recipient and Reply-To setting, and allow the production domain and localhost in EmailJS if domain restrictions are enabled. Client-side spam checks supplement EmailJS provider protections.
+The EmailJS form supplies `from_name`, `from_email`, `subject`, `message` and `reply_to`. It includes validation, a honeypot, duplicate-send protection, local throttling and failure recovery. Confirm the recipient, Reply-To and allowed domains in EmailJS. Direct email is available when sending is unconfigured or fails.
 
-PostHog initializes only in production when both settings are present. It records page visits and departures with identified-only profiles. Autocapture and session recordings are disabled so contact messages are not recorded. Analytics loading failures do not interrupt the portfolio.
+PostHog runs only in production when configured. Autocapture and session recordings are disabled, contact text is not captured, and analytics failures do not interrupt the site.
 
-## Assets and content
+## Assets and repository hygiene
 
-- `public/images/faizan-newest.webp`: optimized copy of the supplied latest JPEG, with orientation normalized and metadata removed. Next.js serves responsive sizes.
-- `public/Faizan_Yousaf_Software_Engineer.pdf`: downloadable copy of the owner-confirmed latest `public/resume.pdf`. Both URLs remain available.
-- `public/resume.docx`: existing editable CV source. Export future approved edits to both PDF filenames.
-- `public/certificates/`: WebP previews rendered from the supplied Coursera and NSCT PDFs. The NSCT preview omits the CNIC number; source PDFs are unchanged and are not published. Images open at full size from the credentials gallery.
-- `public/projects/`: optimized project screenshots, including the supplied ELD Trip Planner and Craftopia storefront images.
-- `public/companies/deaimer.png`: supplied Deaimer logo used in the experience timeline.
-- `components/research.tsx` and `public/research/`: three research perspectives published on Deaimer, their original cover artwork, and article/PDF links. Article data lives in `data/portfolio.ts`.
-- `data/portfolio.ts`: project repositories, experience, skills and certificate links. Missing Coursera destinations were recovered from the CV document.
-- `components/contact.tsx`: contact form, direct email and clipboard action.
-- `instrumentation-client.ts`: PostHog initialization.
-- `app/globals.css`: existing design and responsive form styling.
+- `public/images/faizan-newest.webp`: optimized latest portrait, served responsively by Next.js.
+- `public/education/fast-nuces.webp`: official campus-hosted NUCES logo.
+- `public/certificates/`: four Coursera certificates, two internship documents and the HEC result. The public Digital Genei letter has personal phone/email/address redacted; the HEC preview omits the CNIC. Original local documents are unchanged.
+- `public/projects/`: supplied application screenshots, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).
+- `public/companies/` and `public/research/`: Deaimer logo and original article covers.
+- `public/Faizan_Yousaf_Software_Engineer.pdf`: owner-approved latest CV. `/resume.pdf` remains a compatibility URL with identical bytes.
 
-The old local React/CRACO portfolios are reference material and are unchanged. The replacement GitHub commit removes the old CRA source and tracked `.env` from the current repository tree. Git history is preserved.
+The editable DOCX, obsolete CV-generation helper and unused HealthMate image are retained in ignored `local-only/`, outside the published site. Dependencies, build output, local QA evidence and environment files are ignored. GitHub contains the current Next.js source, required assets and maintenance documentation. Old React/CRACO portfolio directories remain unchanged.
 
-## Validation
+## Validation and deployment
 
 ```bash
 npm run lint
@@ -58,12 +73,8 @@ npm run build
 npm run start
 ```
 
-See `DEPLOYMENT_CHECKLIST.md` for verification results and outstanding deployment steps. Contact transport tests use an intercepted EmailJS response; live email delivery must be confirmed through the configured EmailJS account.
+Browser QA covers desktop/tablet/mobile layouts, filters, implementation notes, images, certificates, navigation and CV downloads. Email transport tests intercept responses; they do not send messages. See `DEPLOYMENT_CHECKLIST.md` for checks and outstanding settings; `CONTENT_AUDIT.md` records content provenance and corrections.
 
-## Redeploy the existing Vercel project
+Push to `main` in `Faizanyousaf140/Faizans-Portfolio` to trigger the existing Vercel integration. `vercel.json` selects Next.js, `npm ci`, `npm run build` and `.next`. Keep Vercel Root Directory at the repository root.
 
-Use `Faizanyousaf140/Faizans-Portfolio`, production branch `main`. `vercel.json` declares the Next.js preset, `npm ci`, `npm run build` and `.next` output. Set Vercel Root Directory to the repository root; clear any old frontend directory setting. Replace old `REACT_APP_*` variables with the variables above in Vercel, then redeploy after pushing.
-
-The previous public portfolio responds at https://faizanyousafs-portfolio.vercel.app and https://faizans-portfolio-seven.vercel.app. The former is used for canonical URLs to match the current CV. Preserve existing domain assignments when redeploying.
-
-`CONTENT_AUDIT.md` retains the original content review and date discrepancies requiring owner verification.
+Production: [faizanyousafs-portfolio.vercel.app](https://faizanyousafs-portfolio.vercel.app) and [faizans-portfolio-seven.vercel.app](https://faizans-portfolio-seven.vercel.app). The first is canonical. Production EmailJS/PostHog settings still need to be added in Vercel, followed by a rebuild and a real delivery check.

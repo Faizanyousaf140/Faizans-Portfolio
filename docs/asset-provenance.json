@@ -1,0 +1,65 @@
+{
+  "updated": "2026-11-22",
+  "generatedConcepts": {
+    "tool": "Built-in image_gen.imagegen",
+    "displayLabel": "AI CONCEPT ILLUSTRATION",
+    "purpose": "Editorial concepts, separate from real application screenshots and model training outputs.",
+    "assets": [
+      {
+        "path": "public/projects/doc2markdown-concept.webp",
+        "prompt": "Create one polished widescreen 3:2 conceptual editorial cover for a software engineer's portfolio project called Document-to-Markdown VLM. Use case: stylized-concept. Depict a sculptural stack of ivory document sheets with abstract page layouts transforming through a translucent jade optical prism into neat structured text blocks. Dark forest-green background, ivory, lime and muted jade accents, soft studio light, tactile paper and frosted glass, refined technical editorial art. Spacious clean composition and a calm premium feeling, strong central silhouette readable at 400px wide. No words, no letters, no numbers, no logos, no UI, no watermark. This is conceptual artwork, not a screenshot or actual model output. Leave lower 15 percent quiet for a caption added by the website."
+      },
+      {
+        "path": "public/projects/bert-feedback-concept.webp",
+        "prompt": "Use case: stylized-concept. Generate one polished widescreen 3:2 conceptual editorial illustration for a software engineering portfolio project, BERT Customer Feedback Classifier. A cluster of tactile ivory speech-bubble tiles with abstract embossed text lines flows toward three orderly translucent glass trays in soft jade, amber and muted coral, suggesting positive, neutral and negative sentiment. Dark forest-green studio background; refined lime accents matching a premium green editorial portfolio, gentle cinematic light and pleasing depth. Strong centered composition legible as a small web card, leave lower 15 percent quiet. No actual letters, words, numbers, logos, labels, interface or watermark. This is conceptual artwork, not a screenshot, not a chart of model results."
+      },
+      {
+        "path": "public/projects/diffusion-concept.webp",
+        "prompt": "Use case: stylized-concept. Create a polished widescreen 3:2 conceptual editorial illustration for a portfolio project implementing a Denoising Diffusion Probabilistic Model. Show six sculptural square glass tiles sweeping through space from left to right: chaotic ivory and jade particle noise gradually resolves into the same simple smooth abstract face sculpture, entirely stylized and non-photorealistic. Dark forest-green background, ivory, muted jade and lime details, soft premium studio lighting, gentle depth, restrained scientific editorial aesthetic. Composition legible at small web-card sizes, leave lower 15 percent calm. No text, numbers, graphs, logos, watermark or software interface. Clearly an illustration of the denoising idea, never actual training results."
+      }
+    ],
+    "optimization": "1200px-wide WebP, quality 85; metadata removed. Original generated PNGs retained outside the repository."
+  },
+  "legacyIllustrations": {
+    "displayLabel": "PROJECT ILLUSTRATION",
+    "purpose": "Overview artwork retained from the owner's old portfolio; illustrative interfaces and pictured numbers are not presented as live screenshots or measured model results.",
+    "assets": [
+      { "path": "public/projects/ai-knowledge-os.webp", "source": "AI Knowledge OS.png" },
+      { "path": "public/projects/clinical-rag.webp", "source": "RAG.png" },
+      { "path": "public/projects/urdu-chatbot.webp", "source": "Conversational chatbot.png" },
+      { "path": "public/projects/urdu-translation.webp", "source": "NMT urdu to roman urdu.png" }
+    ]
+  },
+  "sourcedAssets": [
+    {
+      "path": "public/education/fast-nuces.webp",
+      "source": "https://cfd.nu.edu.pk/wp-content/uploads/2019/07/cropped-250px-National_University_of_Computer_and_Emerging_Sciences_logo-192x192.png",
+      "description": "Official campus-hosted circular NUCES logo, matching the owner's reference."
+    },
+    {
+      "path": "public/projects/gan-comparison.webp",
+      "source": "https://github.com/Faizanyousaf140/Deep-Generative-Models-GAN-Pix2Pix-CycleGan/blob/main/Q1/Q1-Mode-Collapse-Mitigation-using-DCGAN-WGAN-GP-for-Anime-Pokemon-Generation/comparison.png",
+      "description": "Real DCGAN/WGAN-GP comparison from the project repository; labeled as project training samples."
+    },
+    {
+      "path": "public/projects/verbatim-ai.webp",
+      "source": "Owner's old portfolio asset: Digital genei work .png",
+      "description": "Illustrative VerbatimAI overview from the old portfolio, labeled PROJECT ILLUSTRATION; not presented as a live application screenshot."
+    },
+    {
+      "path": "public/projects/loan-approval.webp",
+      "source": "Owner's old portfolio asset: Skillify zone ML.png",
+      "description": "Illustrative loan-prediction overview from the old portfolio, labeled PROJECT ILLUSTRATION; pictured metrics are illustrative rather than portfolio performance claims."
+    },
+    {
+      "path": "public/certificates/digital-genei-internship.webp",
+      "source": "Owner's old portfolio asset: digital genie ai ml.jpg",
+      "description": "Experience letter, 1 July–10 August 2025. Personal phone, email and home address removed from the public derivative."
+    },
+    {
+      "path": "public/certificates/skillify-zone-internship.webp",
+      "source": "Owner's old portfolio asset: skiillify zone internship.jpg",
+      "description": "Completion certificate, 10 July–10 August 2025."
+    }
+  ]
+}

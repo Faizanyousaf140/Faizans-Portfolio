@@ -1,5 +1,5 @@
 /** Portfolio content lives here so updates never require editing UI components. */
-export type ProjectCategory = 'Full-stack' | 'AI / ML' | 'Backend' | 'Testing';
+export type ProjectCategory = 'Full-stack' | 'GenAI / LLMs' | 'NLP' | 'AI / ML' | 'Backend' | 'Testing';
 export type ProjectStatus = 'Completed' | 'In development';
 
 export interface Project {
@@ -14,21 +14,23 @@ export interface Project {
   github?: string;
   demo?: string;
   image?: string;
-  visual: 'knowledge' | 'rental' | 'document' | 'route' | 'clinical' | 'truck' | 'testing' | 'store' | 'meeting' | 'triage' | 'agent';
+  imageKind?: 'screenshot' | 'concept' | 'illustration' | 'training';
+  attribution?: string;
+  visual: 'knowledge' | 'rental' | 'document' | 'route' | 'clinical' | 'truck' | 'testing' | 'store' | 'meeting' | 'triage' | 'agent' | 'nlp' | 'generative' | 'vision';
   featured?: boolean;
 }
 
 export const profile = {
   fullName: 'Muhammad Faizan Yousaf',
   shortName: 'Faizan Yousaf',
-  role: 'Full-Stack Engineer & Applied AI Developer',
+  role: 'Full-Stack AI Engineer · AI / ML & NLP',
   location: 'Faisalabad, Pakistan',
   email: 'faizanyousaf140@gmail.com',
   github: 'https://github.com/Faizanyousaf140',
   linkedin: 'https://www.linkedin.com/in/faizan-yousaf1/',
   huggingface: 'https://huggingface.co/Faizan11112/spaces',
   resume: '/Faizan_Yousaf_Software_Engineer.pdf',
-  bio: 'I build end-to-end web products and practical AI systems. From thoughtful interfaces and reliable APIs to retrieval pipelines and model evaluation, I care about software that can be understood, tested and improved.',
+  bio: 'I build full-stack AI products, LLM applications and NLP systems, connecting responsive interfaces and reliable APIs with retrieval, model fine-tuning and evaluation. At Deaimer, I contribute coding tasks and harnesses to frontier-model training and evaluation workflows.',
 };
 
 export const projects: Project[] = [
@@ -40,24 +42,25 @@ export const projects: Project[] = [
     stack: ['Next.js', 'Node.js', 'MongoDB', 'RAG', 'Redis'],
     github: 'https://github.com/Faizanyousaf140/AI-Knowledge-OS',
     demo: 'https://ai-knowledge-os.vercel.app/',
-    image: '/projects/ai-knowledge-os.webp', visual: 'knowledge',
+    image: '/projects/ai-knowledge-os.webp', imageKind: 'illustration', visual: 'knowledge',
   },
   {
-    slug: 'rentease-pk', name: 'RentEase PK', eyebrow: '02 / PRODUCT ENGINEERING',
-    category: 'Full-stack', status: 'Completed', featured: true,
+    slug: 'rentease-pk', name: 'RentEase PK', eyebrow: 'PRODUCT ENGINEERING',
+    category: 'Full-stack', status: 'Completed',
     description: 'A rental operations platform with separate web, API and PDF services.',
     detail: 'Landlord and tenant workflows for properties, payments and agreements, backed by Django REST, a Next.js dashboard, and a FastAPI document-generation service.',
     stack: ['Next.js', 'TypeScript', 'Django REST', 'FastAPI', 'JWT'],
     github: 'https://github.com/Faizanyousaf140/RentEase-PK', visual: 'rental',
   },
   {
-    slug: 'doc2markdown', name: 'Document-to-Markdown VLM', eyebrow: '03 / MULTIMODAL AI',
-    category: 'AI / ML', status: 'Completed', featured: true,
+    slug: 'doc2markdown', name: 'Document-to-Markdown VLM', eyebrow: '02 / MULTIMODAL & LLM FINE-TUNING',
+    category: 'GenAI / LLMs', status: 'Completed', featured: true,
     description: 'Fine-tuning a vision-language model to understand document layouts.',
     detail: 'Fine-tuned Qwen2-VL-2B with QLoRA/PEFT to transform document-page images into structured Markdown; packaged a Gradio interface for inspection.',
     stack: ['PyTorch', 'Qwen2-VL', 'QLoRA', 'Hugging Face', 'Gradio'],
     github: 'https://github.com/Faizanyousaf140/VLM-qlora-doc2markdown',
-    demo: 'https://huggingface.co/spaces/Faizan11112/doc2markdown-vlm', visual: 'document',
+    demo: 'https://huggingface.co/spaces/Faizan11112/doc2markdown-vlm',
+    image: '/projects/doc2markdown-concept.webp', imageKind: 'concept', visual: 'document',
   },
   {
     slug: 'spotter-fuel-route-planner', name: 'Fuel Route Optimizer', eyebrow: 'ALGORITHMS / API DESIGN',
@@ -70,12 +73,12 @@ export const projects: Project[] = [
   },
   {
     slug: 'clinical-notes-rag', name: 'Clinical Notes RAG', eyebrow: 'AI / RETRIEVAL',
-    category: 'AI / ML', status: 'Completed',
+    category: 'GenAI / LLMs', status: 'Completed',
     description: 'Evidence-grounded question answering over clinical research notes.',
     detail: 'Retrieves relevant MIMIC-IV-Ext DiReCT passages with embeddings and FAISS, then provides supporting context alongside generated answers. Research prototype; not a medical device.',
     stack: ['Python', 'FAISS', 'Sentence Transformers', 'LLMs'],
     github: 'https://github.com/Faizanyousaf140/RAG-for-Diagnostic-Reasoning-in-Clinical-Notes-DiReCT-',
-    image: '/projects/clinical-rag.webp', visual: 'clinical',
+    image: '/projects/clinical-rag.webp', imageKind: 'illustration', visual: 'clinical',
   },
   {
     slug: 'eld-trip-planner', name: 'ELD Trip Planner', eyebrow: 'FULL-STACK / TRANSPORT',
@@ -104,12 +107,93 @@ export const projects: Project[] = [
     image: '/projects/craftopia-pk.webp', visual: 'store',
   },
   {
-    slug: 'verbatim-ai', name: 'VerbatimAI', eyebrow: 'NLP / AUDIO',
-    category: 'AI / ML', status: 'Completed',
+    slug: 'verbatim-ai', name: 'VerbatimAI', eyebrow: '03 / NLP & MEETING INTELLIGENCE',
+    category: 'NLP', status: 'Completed', featured: true,
     description: 'A meeting assistant for transcription, summarization and search.',
     detail: 'Transcribes recordings with Whisper, extracts summaries and action points, and makes transcripts discoverable through semantic retrieval.',
     stack: ['Python', 'Whisper', 'NLP', 'Streamlit', 'FAISS'],
-    github: 'https://github.com/Faizanyousaf140/Verbatim-AI-Project', visual: 'meeting',
+    github: 'https://github.com/Faizanyousaf140/Verbatim-AI-Project',
+    image: '/projects/verbatim-ai.webp', imageKind: 'illustration', visual: 'meeting',
+  },
+  {
+    slug: 'urdu-transformer-chatbot', name: 'Urdu Transformer Chatbot', eyebrow: 'NLP / CONVERSATIONAL AI',
+    category: 'NLP', status: 'Completed',
+    description: 'An Urdu conversational model with a Transformer encoder–decoder and interactive chat.',
+    detail: 'PyTorch model, SentencePiece tokenization and a Streamlit interface, with greedy decoding, beam search and top-k sampling for comparing responses.',
+    stack: ['PyTorch', 'Transformers', 'SentencePiece', 'Streamlit'],
+    github: 'https://github.com/Faizanyousaf140/Conversational-Chatbot-in-Urdu',
+    image: '/projects/urdu-chatbot.webp', imageKind: 'illustration', visual: 'nlp',
+  },
+  {
+    slug: 'bert-feedback-classifier', name: 'BERT Feedback Classifier', eyebrow: 'NLP / MODEL FINE-TUNING',
+    category: 'NLP', status: 'Completed',
+    description: 'Fine-tuned BERT for positive, negative and neutral customer-feedback classification.',
+    detail: 'Preprocessing and tokenization feed an encoder-only classification pipeline; evaluation includes precision, recall, F1 and a confusion matrix, with example inference scripts.',
+    stack: ['BERT', 'Hugging Face', 'PyTorch', 'Scikit-learn'],
+    github: 'https://github.com/Faizanyousaf140/NLP-BERT-Customer-Feedback-Classifier',
+    image: '/projects/bert-feedback-concept.webp', imageKind: 'concept', visual: 'nlp',
+  },
+  {
+    slug: 't5-bart-summarization', name: 'T5 / BART Summarization', eyebrow: 'NLP / TEXT GENERATION',
+    category: 'NLP', status: 'Completed',
+    description: 'Encoder–decoder fine-tuning for concise abstractive news summaries.',
+    detail: 'Prepares CNN/DailyMail article–summary pairs, fine-tunes T5/BART with Hugging Face Transformers and compares generated summaries using ROUGE-1, ROUGE-2 and ROUGE-L.',
+    stack: ['T5 / BART', 'Transformers', 'PyTorch', 'ROUGE'],
+    github: 'https://github.com/Faizanyousaf140/abstractive-text-summarization-t5-bart', visual: 'nlp',
+  },
+  {
+    slug: 'deep-generative-models', name: 'GANs & Image Translation', eyebrow: 'GENERATIVE AI / VISION',
+    category: 'GenAI / LLMs', status: 'Completed',
+    description: 'DCGAN, WGAN-GP, Pix2Pix and CycleGAN experiments in generation and image translation.',
+    detail: 'Compares adversarial training and mode collapse, then explores paired sketch colorization and unpaired sketch–photo translation with interactive Streamlit and Gradio interfaces.',
+    stack: ['PyTorch', 'WGAN-GP', 'Pix2Pix', 'CycleGAN', 'Gradio'],
+    github: 'https://github.com/Faizanyousaf140/Deep-Generative-Models-GAN-Pix2Pix-CycleGan',
+    demo: 'https://huggingface.co/spaces/Faizan11112/dcgan-wgan-anime-generation',
+    image: '/projects/gan-comparison.webp', imageKind: 'training', visual: 'generative',
+  },
+  {
+    slug: 'ddpm-image-generation', name: 'Diffusion Image Generation', eyebrow: 'GENERATIVE AI / DIFFUSION',
+    category: 'GenAI / LLMs', status: 'Completed',
+    description: 'A PyTorch DDPM implementation exploring image generation through iterative denoising.',
+    detail: 'Implements a U-Net with residual blocks, attention and time embeddings, a cosine noise schedule and a Gradio interface for sampling. An educational model trained on CelebA-HQ.',
+    stack: ['PyTorch', 'DDPM', 'U-Net', 'Gradio'],
+    github: 'https://github.com/Faizanyousaf140/Denoising-Diffusion-Probabilistic-Model-DDPM-for-Image-Generation',
+    demo: 'https://huggingface.co/spaces/Faizan11112/ddpm-face-generator',
+    image: '/projects/diffusion-concept.webp', imageKind: 'concept', visual: 'generative',
+  },
+  {
+    slug: 'neural-storyteller', name: 'Neural Storyteller', eyebrow: 'MULTIMODAL / IMAGE CAPTIONING',
+    category: 'NLP', status: 'Completed',
+    description: 'Image-to-text caption generation with a ResNet-50 encoder and LSTM decoder.',
+    detail: 'An academic Flickr30k captioning project with a Streamlit interface, comparing greedy decoding and beam search with BLEU and qualitative examples.',
+    stack: ['PyTorch', 'ResNet-50', 'LSTM', 'BLEU', 'Streamlit'],
+    github: 'https://github.com/Faizanyousaf140/neural-storyteller-image-captioning-seq2seq', visual: 'vision',
+  },
+  {
+    slug: 'masked-autoencoder', name: 'Masked Autoencoder / ViT', eyebrow: 'SELF-SUPERVISED / VISION',
+    category: 'AI / ML', status: 'Completed',
+    description: 'Self-supervised visual representation learning by reconstructing masked image patches.',
+    detail: 'A PyTorch MAE implementation on TinyImageNet using an asymmetric Vision Transformer encoder–decoder, random patch masking, mixed precision and reconstruction loss.',
+    stack: ['PyTorch', 'Vision Transformers', 'MAE', 'TinyImageNet'],
+    github: 'https://github.com/Faizanyousaf140/mae-vit-self-supervised-image-representation', visual: 'vision',
+  },
+  {
+    slug: 'urdu-roman-translation', name: 'Urdu → Roman Urdu Translation', eyebrow: 'NLP / SEQUENCE MODELING',
+    category: 'NLP', status: 'Completed', attribution: 'Adapted academic study · forked repository',
+    description: 'A poetry-focused translation study with a BiLSTM encoder–decoder and attention.',
+    detail: 'An adapted/forked project exploring Bahdanau attention, character-level tokenization and a Streamlit translation interface using the Rekhta poetry dataset. Original repository attribution is retained on GitHub.',
+    stack: ['PyTorch', 'BiLSTM', 'Bahdanau Attention', 'Streamlit'],
+    github: 'https://github.com/Faizanyousaf140/Neural-Machine-Translation-Urdu-to-Roman-Urdu',
+    image: '/projects/urdu-translation.webp', imageKind: 'illustration', visual: 'nlp',
+  },
+  {
+    slug: 'loan-approval-predictor', name: 'Loan Approval Predictor', eyebrow: 'APPLIED ML / CLASSIFICATION',
+    category: 'AI / ML', status: 'Completed',
+    description: 'A tabular ML workflow from data preparation to an interactive prediction interface.',
+    detail: 'Handles missing values, encodes features and compares scikit-learn classifiers with cross-validation and hyperparameter search; includes Streamlit and CLI prediction interfaces.',
+    stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
+    github: 'https://github.com/Faizanyousaf140/Loan-Approval-Predictor-App',
+    image: '/projects/loan-approval.webp', imageKind: 'illustration', visual: 'triage',
   },
   {
     slug: 'matacs', name: 'MATACS Proposal Triage', eyebrow: 'DECISION SUPPORT',
@@ -134,18 +218,22 @@ export interface Experience {
   logo?: string;
   organizationUrl?: string;
   authorUrl?: string;
+  models?: string[];
+  certificate?: { label: string; image: string };
 }
 
 export const deaimerAuthorUrl = 'https://www.deaimer.com/research/authors/R4hfwaXF3QV1o3Lc7g1n';
 
 export const experience: Experience[] = [
   {
-    position: 'Software Engineer', organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
+    position: 'Software Engineer · Frontier LLM Development', organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
     logo: '/companies/deaimer.png', organizationUrl: 'https://www.deaimer.com/', authorUrl: deaimerAuthorUrl,
-    summary: 'Working across AI research, autonomous agents and evaluation engineering, with a focus on coding-agent benchmarks and reliable task environments.',
+    summary: 'Contribute coding tasks and evaluation harnesses to frontier LLM training and evaluation workflows, working across autonomous agents, benchmarks and reliable task environments.',
+    models: ['GPT-6 Astra', 'GPT-5.6 Sol', 'Claude Opus 5', 'Claude Opus 5.5', 'Claude Sonnet 5.5'],
     details: [
       'Design coding-agent tasks and acceptance criteria across Python, JavaScript and SQL.',
       'Build Docker/Linux test harnesses, reference solutions and automated verifiers.',
+      'Work with GPT and Claude models, Codex and Claude Code on agent workflows, tool calling, debugging and failure analysis.',
       'Investigate model-generated defects, edge cases and regressions with reproducible evidence.',
       'Write research perspectives on AI oversight, world-model reliability and post-quantum cryptography.',
     ],
@@ -159,14 +247,16 @@ export const experience: Experience[] = [
     ],
   },
   {
-    position: 'AI / Software Engineering Intern', organization: 'Digital Genei', when: 'Jun — Jul 2025', kind: 'On-site',
+    position: 'AI / Software Engineering Intern', organization: 'Digital Genei', when: 'Jul — Aug 2025', kind: 'On-site',
     summary: 'Built components for a searchable meeting intelligence application.',
     details: ['Integrated Whisper transcription, NLP summarization and FAISS-based semantic retrieval with Python REST endpoints.'],
+    certificate: { label: 'View experience letter · 1 Jul–10 Aug 2025', image: '/certificates/digital-genei-internship.webp' },
   },
   {
     position: 'Machine Learning Intern', organization: 'Skillify Zone', when: 'Jul — Aug 2025', kind: 'Remote',
     summary: 'Developed and evaluated a loan-approval prediction workflow.',
     details: ['Prepared tabular data, trained scikit-learn classifiers and presented results with a Streamlit interface.'],
+    certificate: { label: 'View internship certificate · 10 Jul–10 Aug 2025', image: '/certificates/skillify-zone-internship.webp' },
   },
 ];
 
@@ -200,13 +290,21 @@ export const research = [
 export const skills = [
   { title: 'Frontend & products', tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Responsive UI'] },
   { title: 'Backend & systems', tags: ['Python', 'Django REST', 'FastAPI', 'Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MongoDB'] },
-  { title: 'AI / ML', tags: ['PyTorch', 'RAG', 'FAISS', 'Transformers', 'QLoRA / PEFT', 'Scikit-learn', 'Whisper'] },
+  { title: 'GenAI & LLM engineering', tags: ['RAG', 'FAISS', 'Hugging Face', 'Qwen2-VL', 'QLoRA / PEFT', 'Tool Calling'] },
+  { title: 'NLP & machine learning', tags: ['PyTorch', 'Transformers', 'BERT', 'T5 / BART', 'Whisper', 'Scikit-learn', 'GANs', 'Diffusion'] },
+  { title: 'Frontier models & agents', tags: ['GPT', 'Claude', 'Codex', 'Claude Code', 'Harness Engineering', 'Agent Evaluation', 'Coding-task Design'] },
   { title: 'Testing & delivery', tags: ['Docker', 'Linux', 'pytest', 'Git', 'GitHub Actions', 'Jenkins', 'API Testing'] },
 ];
 
-export const credentials = [
+export interface Credential {
+  name: string; provider: string; date: string; label: string; image: string; url?: string;
+}
+
+export const credentials: Credential[] = [
   { name: 'Machine Learning Specialization', provider: 'DeepLearning.AI · Stanford Online', date: 'Jul 2025', label: '3-course specialization', image: '/certificates/machine-learning.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Q4A7R6RWXYD3' },
   { name: 'NLP with Classification and Vector Spaces', provider: 'DeepLearning.AI', date: 'Jul 2025', label: 'Course certificate', image: '/certificates/nlp.webp', url: 'https://www.coursera.org/account/accomplishments/verify/HUZ8D8TG6S7S' },
+  { name: 'AI / ML Internship Experience', provider: 'Digital Genei', date: 'Jul–Aug 2025', label: 'Experience letter · 1 Jul–10 Aug 2025', image: '/certificates/digital-genei-internship.webp' },
+  { name: 'Machine Learning Internship', provider: 'Skillify Zone', date: 'Jul–Aug 2025', label: 'Completion certificate · 10 Jul–10 Aug 2025', image: '/certificates/skillify-zone-internship.webp' },
   { name: 'Google Prompting Essentials', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-prompting.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Y67VK3EUY21D' },
   { name: 'Google Network Security', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-network-security.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/7G3G47ELAMCH' },
 ];

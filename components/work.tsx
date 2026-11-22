@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, Github, Layers3 } from 'lucide-react';
 import { profile, projects, type Project, type ProjectCategory } from '@/data/portfolio';
 import { ProjectArt } from '@/components/project-art';
 
-const choices = ['All', 'Full-stack', 'AI / ML', 'Backend', 'Testing'] as const;
+const choices = ['All', 'GenAI / LLMs', 'NLP', 'AI / ML', 'Full-stack', 'Backend', 'Testing'] as const;
 type CategoryFilter = 'All' | ProjectCategory;
 
 function ProjectActions({ project }: { project: Project }) {
@@ -22,6 +22,7 @@ function FeaturedProject({ project, index }: { project: Project; index: number }
       <div className="featured-topline"><span>{project.eyebrow}</span><span className="feature-counter">0{index + 1} / 03</span></div>
       <h3>{project.name}</h3>
       <p>{project.description}</p>
+      {project.attribution && <p className="project-attribution">{project.attribution}</p>}
       <p className="feature-detail">{project.detail}</p>
       <div className="tech-list">{project.stack.map(t => <span key={t}>{t}</span>)}</div>
       <ProjectActions project={project}/>
@@ -36,6 +37,8 @@ function CompactProject({ project }: { project: Project }) {
       <div className="compact-category"><span>{project.category}</span>{project.status !== 'Completed' && <span className="development-badge">IN DEVELOPMENT</span>}</div>
       <h3>{project.name}</h3>
       <p>{project.description}</p>
+      {project.attribution && <p className="project-attribution">{project.attribution}</p>}
+      <details className="project-notes"><summary>Implementation notes</summary><p>{project.detail}</p></details>
       <div className="tech-list tech-list-small">{project.stack.slice(0, 4).map(t => <span key={t}>{t}</span>)}</div>
       <ProjectActions project={project}/>
     </div>
@@ -45,12 +48,14 @@ function CompactProject({ project }: { project: Project }) {
 export function Work() {
   const [selected, setSelected] = useState<CategoryFilter>('All');
   const featured = projects.filter(p => p.featured);
-  const other = projects.filter(p => !p.featured && (selected === 'All' || p.category === selected));
+  const other = projects
+    .filter(p => !p.featured && (selected === 'All' || p.category === selected))
+    .sort((a, b) => choices.indexOf(a.category) - choices.indexOf(b.category));
   return <section className="work-section section-pad" id="work" aria-labelledby="work-title">
     <div className="container">
       <div className="section-heading section-heading-split">
         <div><div className="section-kicker"><span className="section-count">01</span> SELECTED WORK</div><h2 id="work-title">Things I&apos;ve <span className="section-heading-accent">built.</span></h2></div>
-        <p>A few projects that show how I approach engineering: make it useful, understand the trade-offs, and verify that it works.</p>
+        <p>Full-stack AI products, LLM fine-tuning, retrieval systems, NLP and generative models, alongside the APIs and tests that support them.</p>
       </div>
       <div className="featured-grid">{featured.map((p,i) => <FeaturedProject key={p.slug} project={p} index={i}/>)}</div>
       <div className="archive-heading">

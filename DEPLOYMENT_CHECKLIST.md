@@ -39,3 +39,16 @@ Browser evidence and the local smoke-test script are in ignored `test-results/`.
 Existing content review: confirm the Deaimer start month (June versus July 2026) when convenient; this update preserves the current content.
 
 Production: https://faizanyousafs-portfolio.vercel.app and https://faizans-portfolio-seven.vercel.app. Successful implementation deployment: https://vercel.com/faizanyousaf140-gmailcoms-projects/faizans-portfolio/EQU25abc23rfCrZEE2N87BpRbHd5.
+
+## AI/NLP portfolio update - 22 November 2026
+
+- [x] Clean dependency installation: 361 packages added, 362 audited, zero vulnerabilities. npm reported an ESLint 9 deprecation notice; lint passes without errors or warnings.
+- [x] Final npm run lint, npm run typecheck and npm run build all pass.
+- [x] Chromium checks pass at 1440, 768, 390 and 320 pixels: 20 projects, six working category filters, expandable implementation notes, six certificate cards and two internship-proof links.
+- [x] Verified the NUCES logo, five frontier-model labels, three new generated concept labels, six legacy illustration labels, responsive images, navigation and byte-identical CV download.
+- [x] No browser runtime errors, horizontal overflow or desktop navigation overlap. Reviewed screenshots and improved the mobile education layout.
+- [x] All 19 public project source links match repositories owned by Faizanyousaf140. New VLM/DDPM Hugging Face apps report running; the GAN app reports sleeping and may require wake-up.
+- [x] Unused assets and CV source/helper moved to ignored local-only/. Verified that environment files, dependencies, build output and local QA evidence remain ignored.
+- [x] Updated GitHub repository description and homepage to the current Next.js/AI engineering portfolio.
+
+Production EmailJS/PostHog settings and a real EmailJS delivery check remain outstanding as described above.

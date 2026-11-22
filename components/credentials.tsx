@@ -7,7 +7,7 @@ export function Credentials() {
     <div className="container">
       <div className="section-heading section-heading-split">
         <div><div className="section-kicker"><span className="section-count">04</span> LEARNING & MILESTONES</div><h2 id="credentials-title">Still <span className="section-heading-accent">learning.</span> Always.</h2></div>
-        <p>Completed coursework and a nationally administered competency assessment. In-progress courses are not shown as earned certificates.</p>
+        <p>Machine learning and NLP coursework, internship certificates and a nationally administered competency assessment.</p>
       </div>
       <div className="credentials-layout">
         <div className="achievement-card">
@@ -27,7 +27,7 @@ export function Credentials() {
           <div className="certificate-detail"><span>{c.provider} · {c.date}</span><h3>{c.name}</h3><small>{c.label}</small></div>
           <div className="certificate-actions">
             <a className="certificate-image-link" href={c.image} target="_blank" rel="noopener noreferrer" aria-label={`Open certificate image: ${c.name}`}>View image</a>
-            <a href={c.url} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${c.name}`} className="certificate-link">Verify credential</a>
+            {c.url && <a href={c.url} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${c.name}`} className="certificate-link">Verify credential</a>}
           </div>
         </article>)}</div>
       </div>
