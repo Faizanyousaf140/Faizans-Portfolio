@@ -65,7 +65,8 @@ export const projects: Project[] = [
     description: 'Cost-aware routing with optimal fuel stops and an interactive map.',
     detail: 'Django REST APIs combine OSRM routes with fuel-station data and cost constraints to find economical refueling stops. The repository documents 500-mile range and 10-mpg assumptions.',
     stack: ['Python', 'Django REST', 'OSRM', 'Optimization', 'Leaflet'],
-    github: 'https://github.com/Faizanyousaf140/spotter-fuel-route-planner', visual: 'route',
+    github: 'https://github.com/Faizanyousaf140/spotter-fuel-route-planner',
+    image: '/projects/fuel-route-planner.webp', visual: 'route',
   },
   {
     slug: 'clinical-notes-rag', name: 'Clinical Notes RAG', eyebrow: 'AI / RETRIEVAL',

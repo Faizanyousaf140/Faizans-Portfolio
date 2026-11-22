@@ -56,3 +56,8 @@
 - Removed the CNIC number from the derived NSCT preview, retaining the name, institution, test date, subject scores, total of 71/100 and 97.7th percentile. Removed browser print margins from that preview. The original source PDF is not published.
 - Added responsive document previews with full-size image links. Existing Coursera verification destinations and the HEC result link remain available.
 - Validation passed: ESLint, TypeScript, production build, and Chromium checks at 1440, 768, 390 and 320 pixels. All five images load without cropping, full-size image links work (including keyboard activation), and no horizontal overflow or runtime errors were found.
+
+## Fuel Route Optimizer screenshot — 22 November 2026
+
+- Replaced the illustrative project graphic with an optimized WebP copy of the supplied `Fuel+route_planner.png`.
+- Preserved the full wide screenshot, including the fuel-cost panel and route map. The card caption stays beneath the screenshot without obscuring it. The original PNG and project repository link are unchanged.
