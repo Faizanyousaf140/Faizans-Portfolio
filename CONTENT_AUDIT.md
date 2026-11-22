@@ -42,3 +42,9 @@
 - Recovered the AI Knowledge OS demo from the CV; its Next.js homepage responds successfully.
 - All ten listed project repositories and the Hugging Face destinations respond successfully. LinkedIn blocks automated checks with HTTP 999; the profile URL matches both the old portfolio and the current CV.
 - Both existing Vercel domains respond with the old React site. GitHub's latest production deployment is marked failed; a new deployment is required after migration.
+
+## Publication follow-up — 22 November 2026
+
+- Explicitly selected the saved GitHub account `Faizanyousaf140`, resolving the initial ambiguous-account authentication failure, and pushed implementation commit `17f4daa` to the requested repository.
+- The linked Vercel Git integration deployed the Next.js migration successfully. Both original portfolio domains now serve the updated photo, CV and design.
+- Production environment settings remain a separate step: the saved Vercel CLI token is expired. The live contact form correctly offers direct email until the new EmailJS variables are configured and rebuilt.

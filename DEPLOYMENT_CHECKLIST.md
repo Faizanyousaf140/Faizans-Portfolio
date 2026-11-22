@@ -23,15 +23,19 @@
 
 Browser evidence and the local smoke-test script are in ignored `test-results/`.
 
-## Required to publish
+## Publication and remaining configuration
 
-- [ ] Authenticate Git for GitHub repository `Faizanyousaf140/Faizans-Portfolio`. The push preflight fails because no usable GitHub credentials are available in this session.
-- [ ] Push the prepared local commit to `origin/main` after authentication.
-- [ ] Connect the existing Vercel account/project. No authenticated Vercel session is currently available.
-- [ ] Confirm Vercel Root Directory is the repository root, Framework Preset is Next.js, and legacy CRA settings are cleared. `vercel.json` supplies Next.js install/build/output settings.
+- [x] Selected the saved Windows Credential Manager account `Faizanyousaf140` explicitly for this repository. The initial authentication failure was caused by ambiguous account selection.
+- [x] Pushed implementation commit `17f4daa` to `Faizanyousaf140/Faizans-Portfolio` on `main`.
+- [x] Existing Vercel Git integration completed a successful production deployment. Both public domains now serve the new Next.js homepage, portrait and CV.
+- [x] Verified the deployed site in desktop and mobile Chromium: portrait loads, PDF matches the approved CV, navigation works, and there is no horizontal overflow or runtime error.
+- [x] `vercel.json` supplies the successful Next.js install/build/output settings.
+- [ ] Refresh Vercel CLI authentication to manage project environment variables. A saved CLI login exists, but the API rejects its expired token; device sign-in is required.
 - [ ] Add the six variables from `.env.local` to the Vercel production environment through its secure settings. Do not commit that file. Public client identifiers are embedded at build time, so redeploy after setting them.
-- [ ] Redeploy the existing Vercel project and preserve its current domains. The latest pre-existing GitHub deployment is marked failed; both public domains currently serve the old React site.
+- [ ] Redeploy after adding environment variables. The live form currently displays the direct-email fallback because EmailJS settings are absent in the production build.
 - [ ] Confirm a real contact submission arrives using the configured EmailJS account, template recipient, Reply-To and allowed domains.
 - [ ] Verify production PostHog events in its dashboard and confirm the deployed CV, portrait and mobile layout.
 
 Existing content review: confirm the Deaimer start month (June versus July 2026) when convenient; this update preserves the current content.
+
+Production: https://faizanyousafs-portfolio.vercel.app and https://faizans-portfolio-seven.vercel.app. Successful implementation deployment: https://vercel.com/faizanyousaf140-gmailcoms-projects/faizans-portfolio/EQU25abc23rfCrZEE2N87BpRbHd5.
