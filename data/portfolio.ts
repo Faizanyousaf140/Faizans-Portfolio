@@ -83,7 +83,8 @@ export const projects: Project[] = [
     description: 'Route planning and driver daily-log generation in one application.',
     detail: 'React and Leaflet interface with Django REST APIs and logic for generating drivers’ daily logs from hours-of-service constraints, including the 70-hour/8-day cycle.',
     stack: ['React', 'Django REST', 'PostgreSQL', 'Leaflet'],
-    github: 'https://github.com/Faizanyousaf140/eld-trip-planner', visual: 'truck',
+    github: 'https://github.com/Faizanyousaf140/eld-trip-planner',
+    image: '/projects/eld-trip-planner.webp', visual: 'truck',
   },
   {
     slug: 'node-auth-tests', name: 'Authentication & CI Tests', eyebrow: 'TESTING / AUTOMATION',
@@ -99,7 +100,8 @@ export const projects: Project[] = [
     description: 'A responsive storefront for a handmade-products brand.',
     detail: 'A product catalog and shopping experience built with reusable Next.js and TypeScript components, responsive layouts and a consistent design system.',
     stack: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
-    github: 'https://github.com/Faizanyousaf140/craftopia-pk', visual: 'store',
+    github: 'https://github.com/Faizanyousaf140/craftopia-pk',
+    image: '/projects/craftopia-pk.webp', visual: 'store',
   },
   {
     slug: 'verbatim-ai', name: 'VerbatimAI', eyebrow: 'NLP / AUDIO',
@@ -129,15 +131,23 @@ export const projects: Project[] = [
 
 export interface Experience {
   position: string; organization: string; when: string; kind: string; summary: string; details: string[];
+  logo?: string;
+  organizationUrl?: string;
+  authorUrl?: string;
 }
+
+export const deaimerAuthorUrl = 'https://www.deaimer.com/research/authors/R4hfwaXF3QV1o3Lc7g1n';
+
 export const experience: Experience[] = [
   {
-    position: 'Junior Software Engineer', organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
-    summary: 'Building rigorous evaluation environments for AI-generated software.',
+    position: 'Software Engineer', organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
+    logo: '/companies/deaimer.png', organizationUrl: 'https://www.deaimer.com/', authorUrl: deaimerAuthorUrl,
+    summary: 'Working across AI research, autonomous agents and evaluation engineering, with a focus on coding-agent benchmarks and reliable task environments.',
     details: [
       'Design coding-agent tasks and acceptance criteria across Python, JavaScript and SQL.',
       'Build Docker/Linux test harnesses, reference solutions and automated verifiers.',
       'Investigate model-generated defects, edge cases and regressions with reproducible evidence.',
+      'Write research perspectives on AI oversight, world-model reliability and post-quantum cryptography.',
     ],
   },
   {
@@ -157,6 +167,33 @@ export const experience: Experience[] = [
     position: 'Machine Learning Intern', organization: 'Skillify Zone', when: 'Jul — Aug 2025', kind: 'Remote',
     summary: 'Developed and evaluated a loan-approval prediction workflow.',
     details: ['Prepared tabular data, trained scikit-learn classifiers and presented results with a Streamlit interface.'],
+  },
+];
+
+export const research = [
+  {
+    slug: 'quantum-migration',
+    title: 'The Quantum Migration Problem: Can the World Replace Its Cryptography Before It Becomes Obsolete?',
+    topic: 'AI Safety & Ethics', date: '2026-11-03',
+    description: 'Post-quantum migration, cryptographic agility and hybrid protocols, with a proposed framework for assessing readiness.',
+    url: 'https://www.deaimer.com/research/the-quantum-migration-problem-can-the-world-replace-its-cryp-41fc3427',
+    image: '/research/quantum-migration.webp',
+  },
+  {
+    slug: 'physics-gap',
+    title: 'The Physics Gap: Can Generative World Models Become Trustworthy Training Environments for AI Agents?',
+    topic: 'RL Environments', date: '2026-11-02',
+    description: 'Failure fidelity, action-conditioned world models and sim-to-real transfer, with a proposed evaluation framework for RL environments.',
+    url: 'https://www.deaimer.com/research/the-physics-gap-can-generative-world-models-become-trustwort-66e4da63',
+    image: '/research/physics-gap.webp',
+  },
+  {
+    slug: 'agi-oversight',
+    title: 'The Race Toward AGI: Can Human Oversight Keep Pace with Autonomous AI?',
+    topic: 'AI Safety & Ethics', date: '2026-10-21',
+    description: 'The gap between growing AI autonomy, effective human oversight and accountability for real-world decisions.',
+    url: 'https://www.deaimer.com/research/the-race-with-no-finish-line-f6364920',
+    image: '/research/agi-oversight.webp',
   },
 ];
 

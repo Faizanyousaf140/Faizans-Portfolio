@@ -7,6 +7,7 @@ import { profile } from '@/data/portfolio';
 const nav = [
   { text: 'Projects', href: '#work' },
   { text: 'Experience', href: '#experience' },
+  { text: 'Research', href: '#research' },
   { text: 'About', href: '#about' },
   { text: 'Credentials', href: '#credentials' },
   { text: 'Contact', href: '#contact' },

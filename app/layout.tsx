@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://faizanyousafs-portf
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: 'Faizan Yousaf — Full-Stack & Applied AI Engineer', template: '%s | Faizan Yousaf' },
-  description: 'Portfolio of Muhammad Faizan Yousaf, a FAST-NUCES computer science graduate and Junior Software Engineer building full-stack applications, RAG systems and reliable AI evaluations.',
+  description: 'Portfolio of Muhammad Faizan Yousaf, a FAST-NUCES computer science graduate and Software Engineer building full-stack applications, RAG systems and reliable AI evaluations.',
   keywords: ['Faizan Yousaf', 'Full-Stack Engineer', 'Next.js', 'TypeScript', 'Python', 'Applied AI', 'RAG', 'Software Engineer', 'Django REST'],
   authors: [{ name: 'Muhammad Faizan Yousaf' }],
   creator: 'Muhammad Faizan Yousaf',

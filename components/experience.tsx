@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowUpRight, BriefcaseBusiness, GraduationCap } from 'lucide-react';
 import { experience, profile } from '@/data/portfolio';
 
@@ -15,9 +16,11 @@ export function Experience() {
             <div className="timeline-rail"><span className={i === 0 ? 'timeline-node active' : 'timeline-node'}/></div>
             <div className="timeline-content">
               <div className="timeline-meta"><span>{item.when}</span><span>{item.kind}</span></div>
-              <h3>{item.position}</h3><div className="timeline-org">{item.organization}</div>
+              <h3>{item.position}</h3>
+              <div className="timeline-org">{item.logo && item.organizationUrl ? <a className="timeline-company-logo" href={item.organizationUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.organization}`}><Image src={item.logo} alt={item.organization} width={199} height={48} sizes="166px" /></a> : item.organization}</div>
               <p className="timeline-summary">{item.summary}</p>
               <ul>{item.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
+              {item.authorUrl && <div className="timeline-research-links"><a href="#research">Explore my research</a><a href={item.authorUrl} target="_blank" rel="noopener noreferrer">Deaimer author profile</a></div>}
             </div>
           </article>)}
         </div>

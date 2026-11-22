@@ -61,3 +61,13 @@
 
 - Replaced the illustrative project graphic with an optimized WebP copy of the supplied `Fuel+route_planner.png`.
 - Preserved the full wide screenshot, including the fuel-cost panel and route map. The card caption stays beneath the screenshot without obscuring it. The original PNG and project repository link are unchanged.
+
+## Project screenshots, Deaimer experience and research — 22 November 2026
+
+- Added optimized copies of `ELd-trip-planner.png` and `Crafopia-pk.png` to the matching ELD Trip Planner and Craftopia.pk project cards. Full screenshots remain visible, without caption overlays obscuring the interfaces.
+- Added the supplied `deaimer_logo.png` to the Deaimer experience entry. Reviewed `Deaimer_details.png` for context; original files in Downloads remain unchanged.
+- Updated the role to Software Engineer, consistent with the supplied biography and the official author profile: https://www.deaimer.com/research/authors/R4hfwaXF3QV1o3Lc7g1n. The existing June 2026 start date is preserved; the earlier month discrepancy remains for owner confirmation.
+- Kept existing documented engineering responsibilities and added the grounded research-writing activity. Company-wide services were not presented as individual accomplishments.
+- Added a Research section featuring the owner's three published perspectives: The Quantum Migration Problem (3 November 2026), The Physics Gap (2 November 2026), and The Race Toward AGI (21 October 2026). Presented the research and proposed frameworks using the scope stated by the author.
+- Verified all three official article URLs and PDF endpoints (HTTP 200, application/pdf, valid PDF header). Cover artwork comes from the corresponding published article pages and is optimized locally as WebP.
+- Validation passed: ESLint, TypeScript, production build, and browser checks at 1440, 768, 390 and 320 pixels. Verified the two project screenshots, Deaimer logo, three research covers, article dates and links, desktop/mobile Research navigation, project filters and existing anchor targets. No runtime errors, overlapping navigation or horizontal overflow were found.
