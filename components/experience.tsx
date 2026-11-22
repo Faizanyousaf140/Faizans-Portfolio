@@ -15,13 +15,19 @@ export function Experience() {
           {experience.map((item,i) => <article className="timeline-entry" key={item.organization}>
             <div className="timeline-rail"><span className={i === 0 ? 'timeline-node active' : 'timeline-node'}/></div>
             <div className="timeline-content">
-              <div className="timeline-meta"><span>{item.when}</span><span>{item.kind}</span></div>
-              <h3>{item.position}</h3>
-              <div className="timeline-org">{item.logo && item.organizationUrl ? <a className="timeline-company-logo" href={item.organizationUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.organization}`}><Image src={item.logo} alt={item.organization} width={199} height={48} sizes="166px" /></a> : item.organization}</div>
+              <div className="timeline-heading">
+                {item.certificate && <a className="experience-certificate" href={item.certificate.image} target="_blank" rel="noopener noreferrer" aria-label={`${item.organization}: ${item.certificate.label} (opens in a new tab)`} title={item.certificate.label}>
+                  <Image src={item.certificate.image} alt={`${item.organization} internship certificate preview`} width={800} height={1131} sizes="(max-width: 520px) 52px, 68px" />
+                </a>}
+                <div className="timeline-heading-text">
+                  <div className="timeline-meta"><span>{item.when}</span><span>{item.kind}</span></div>
+                  <h3>{item.position}</h3>
+                  <div className="timeline-org">{item.logo && item.organizationUrl ? <a className="timeline-company-logo" href={item.organizationUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.organization}`}><Image src={item.logo} alt={item.organization} width={199} height={48} sizes="166px" /></a> : item.organization}</div>
+                </div>
+              </div>
               <p className="timeline-summary">{item.summary}</p>
               <ul>{item.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
               {item.models && <div className="experience-models"><span>MODELS WORKED WITH</span><div className="tech-list">{item.models.map(model => <span key={model}>{model}</span>)}</div></div>}
-              {item.certificate && <a className="experience-certificate" href={item.certificate.image} target="_blank" rel="noopener noreferrer">{item.certificate.label} <ArrowUpRight size={15} aria-hidden="true" /></a>}
               {item.authorUrl && <div className="timeline-research-links"><a href="#research">Explore my research</a><a href={item.authorUrl} target="_blank" rel="noopener noreferrer">Deaimer author profile</a></div>}
             </div>
           </article>)}
