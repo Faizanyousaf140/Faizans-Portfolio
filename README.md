@@ -38,6 +38,7 @@ PostHog initializes only in production when both settings are present. It record
 - `public/images/faizan-newest.webp`: optimized copy of the supplied latest JPEG, with orientation normalized and metadata removed. Next.js serves responsive sizes.
 - `public/Faizan_Yousaf_Software_Engineer.pdf`: downloadable copy of the owner-confirmed latest `public/resume.pdf`. Both URLs remain available.
 - `public/resume.docx`: existing editable CV source. Export future approved edits to both PDF filenames.
+- `public/certificates/`: WebP previews rendered from the supplied Coursera and NSCT PDFs. The NSCT preview omits the CNIC number; source PDFs are unchanged and are not published. Images open at full size from the credentials gallery.
 - `data/portfolio.ts`: project repositories, experience, skills and certificate links. Missing Coursera destinations were recovered from the CV document.
 - `components/contact.tsx`: contact form, direct email and clipboard action.
 - `instrumentation-client.ts`: PostHog initialization.

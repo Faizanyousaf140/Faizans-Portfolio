@@ -167,10 +167,10 @@ export const skills = [
 ];
 
 export const credentials = [
-  { name: 'Machine Learning Specialization', provider: 'DeepLearning.AI · Stanford Online', date: 'Jul 2025', label: '3-course specialization', url: 'https://www.coursera.org/account/accomplishments/specialization/Q4A7R6RWXYD3' },
-  { name: 'NLP with Classification and Vector Spaces', provider: 'DeepLearning.AI', date: 'Jul 2025', label: 'Course certificate', url: 'https://www.coursera.org/account/accomplishments/verify/HUZ8D8TG6S7S' },
-  { name: 'Google Prompting Essentials', provider: 'Google', date: 'Aug 2026', label: 'Certificate', url: 'https://www.coursera.org/account/accomplishments/specialization/Y67VK3EUY21D' },
-  { name: 'Google Network Security', provider: 'Google', date: 'Aug 2026', label: 'Certificate', url: 'https://www.coursera.org/account/accomplishments/specialization/7G3G47ELAMCH' },
+  { name: 'Machine Learning Specialization', provider: 'DeepLearning.AI · Stanford Online', date: 'Jul 2025', label: '3-course specialization', image: '/certificates/machine-learning.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Q4A7R6RWXYD3' },
+  { name: 'NLP with Classification and Vector Spaces', provider: 'DeepLearning.AI', date: 'Jul 2025', label: 'Course certificate', image: '/certificates/nlp.webp', url: 'https://www.coursera.org/account/accomplishments/verify/HUZ8D8TG6S7S' },
+  { name: 'Google Prompting Essentials', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-prompting.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Y67VK3EUY21D' },
+  { name: 'Google Network Security', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-network-security.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/7G3G47ELAMCH' },
 ];
 
 export const facts = [

@@ -1,4 +1,5 @@
-import { ArrowUpRight, Award, BookOpenCheck, Medal } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight, Medal } from 'lucide-react';
 import { credentials } from '@/data/portfolio';
 
 export function Credentials() {
@@ -9,12 +10,26 @@ export function Credentials() {
         <p>Completed coursework and a nationally administered competency assessment. In-progress courses are not shown as earned certificates.</p>
       </div>
       <div className="credentials-layout">
-        <div className="achievement-card"><div className="achievement-top"><div className="achievement-icon"><Medal size={27}/></div><span>HEC · 2026</span></div><div className="achievement-metric">97.7<span>th</span></div><h3>Percentile</h3><p>National Skills Competency Test for IT Graduates · 71 / 100 points</p><a className="achievement-foot achievement-proof" href="https://drive.google.com/file/d/1ah8CnYb5MKX_K-Mob808zeQZgUoyHt7n/view" target="_blank" rel="noopener noreferrer" aria-label="View HEC National Skills Competency Test result">VIEW HEC RESULT <ArrowUpRight size={15} aria-hidden="true" /></a></div>
-        <div className="certification-stack">{credentials.map((c,i) => <div className="certificate" key={c.name}>
-          <div className="certificate-icon">{i === 0 ? <Award size={24}/> : <BookOpenCheck size={24}/>}</div>
+        <div className="achievement-card">
+          <div className="achievement-top"><div className="achievement-icon"><Medal size={27}/></div><span>HEC · 2026</span></div>
+          <div className="achievement-metric">97.7<span>th</span></div><h3>Percentile</h3>
+          <p>National Skills Competency Test for IT Graduates · 71 / 100 points</p>
+          <a className="achievement-preview" href="/certificates/hec-nsct-result.webp" target="_blank" rel="noopener noreferrer" aria-label="View full-size HEC test result image">
+            <span className="achievement-preview-image"><Image src="/certificates/hec-nsct-result.webp" alt="HEC National Skills Competency Test result showing 71 points and 97.7th percentile" fill sizes="(max-width: 760px) 85vw, (max-width: 980px) 42vw, 420px" /></span>
+            <span className="achievement-preview-caption">View result image</span>
+          </a>
+          <a className="achievement-foot achievement-proof" href="https://drive.google.com/file/d/1ah8CnYb5MKX_K-Mob808zeQZgUoyHt7n/view" target="_blank" rel="noopener noreferrer" aria-label="View HEC National Skills Competency Test result">VIEW HEC RESULT <ArrowUpRight size={15} aria-hidden="true" /></a>
+        </div>
+        <div className="certification-stack">{credentials.map(c => <article className="certificate" key={c.name}>
+          <a className="certificate-preview" href={c.image} target="_blank" rel="noopener noreferrer" aria-label={`View full-size certificate image: ${c.name}`}>
+            <Image src={c.image} alt={`${c.name} certificate awarded to Muhammad Faizan Yousaf`} fill sizes="(max-width: 520px) 90vw, (max-width: 980px) 45vw, 320px" />
+          </a>
           <div className="certificate-detail"><span>{c.provider} · {c.date}</span><h3>{c.name}</h3><small>{c.label}</small></div>
-          {c.url ? <a href={c.url} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${c.name}`} className="certificate-link"><ArrowUpRight size={20}/></a> : <span className="certificate-no-link" aria-label="Verification link not yet added">—</span>}
-        </div>)}</div>
+          <div className="certificate-actions">
+            <a className="certificate-image-link" href={c.image} target="_blank" rel="noopener noreferrer" aria-label={`Open certificate image: ${c.name}`}>View image</a>
+            <a href={c.url} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${c.name}`} className="certificate-link">Verify credential</a>
+          </div>
+        </article>)}</div>
       </div>
     </div>
   </section>;

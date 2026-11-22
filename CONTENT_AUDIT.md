@@ -48,3 +48,11 @@
 - Explicitly selected the saved GitHub account `Faizanyousaf140`, resolving the initial ambiguous-account authentication failure, and pushed implementation commit `17f4daa` to the requested repository.
 - The linked Vercel Git integration deployed the Next.js migration successfully. Both original portfolio domains now serve the updated photo, CV and design.
 - Production environment settings remain a separate step: the saved Vercel CLI token is expired. The live contact form correctly offers direct email until the new EmailJS variables are configured and rebuilt.
+
+## Certificate imagery — 22 November 2026
+
+- Rendered the four supplied Coursera PDFs and `NSCT Result.pdf` as optimized WebP assets in `public/certificates/`. These are previews of the real documents; the original PDFs are unchanged.
+- Checked the Coursera certificate titles, dates, recipient and verification IDs against the portfolio data. All four match.
+- Removed the CNIC number from the derived NSCT preview, retaining the name, institution, test date, subject scores, total of 71/100 and 97.7th percentile. Removed browser print margins from that preview. The original source PDF is not published.
+- Added responsive document previews with full-size image links. Existing Coursera verification destinations and the HEC result link remain available.
+- Validation passed: ESLint, TypeScript, production build, and Chromium checks at 1440, 768, 390 and 320 pixels. All five images load without cropping, full-size image links work (including keyboard activation), and no horizontal overflow or runtime errors were found.
