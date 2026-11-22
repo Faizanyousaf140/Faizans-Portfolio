@@ -29,22 +29,39 @@ const graphicLabel: Record<Project['visual'], [string, string]> = {
 export function ProjectArt({ project, large = false }: { project: Project; large?: boolean }) {
   const Icon = iconMap[project.visual];
   const [label, line] = graphicLabel[project.visual];
+  const image = project.image;
+
+  if (image) {
+    const kindLabel = project.imageKind === 'concept' ? 'AI CONCEPT ILLUSTRATION'
+      : project.imageKind === 'illustration' ? 'PROJECT ILLUSTRATION'
+      : project.imageKind === 'training' ? 'PROJECT TRAINING SAMPLES' : undefined;
+    const alt = project.imageKind === 'concept' ? `AI-generated concept illustration for ${project.name}; not a screenshot or model output`
+      : project.imageKind === 'illustration' ? `Illustrative project overview for ${project.name}; not a live screenshot`
+      : project.imageKind === 'training' ? `${project.name} training sample comparison from the project repository`
+      : `${project.name} application screenshot`;
+
+    return <figure className={`project-art art-${project.visual} has-project-image ${large ? 'art-large' : ''} ${project.imageKind === 'concept' ? 'has-concept-image' : ''}`}>
+      <a className="project-image-link" href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`View full-size image: ${project.name}`}>
+        <Image className="project-screenshot" src={image.src} width={image.width} height={image.height} sizes="(max-width: 520px) 90vw, (max-width: 760px) 94vw, (max-width: 980px) 44vw, 590px" alt={alt} />
+      </a>
+      <figcaption className="art-image-caption">
+        <div className="art-image-description"><small>{label}</small><strong>{line}</strong></div>
+        <div className="art-image-actions">
+          {kindLabel && <span className="concept-image-label">{kindLabel}</span>}
+          <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${project.name}`}>View full image</a>
+        </div>
+      </figcaption>
+    </figure>;
+  }
+
   return (
-    <div className={`project-art art-${project.visual} ${large ? 'art-large' : ''} ${project.image ? 'has-project-image' : ''} ${project.imageKind === 'concept' ? 'has-concept-image' : ''}`}>
-      {project.image ? <>
-        <Image className="project-screenshot" src={project.image} fill sizes={large ? '(max-width: 800px) 100vw, 560px' : '(max-width: 600px) 100vw, 400px'} alt={project.imageKind === 'concept' ? `AI-generated concept illustration for ${project.name}; not a screenshot or model output` : project.imageKind === 'illustration' ? `Illustrative project overview for ${project.name}; not a live screenshot` : project.imageKind === 'training' ? `${project.name} training sample comparison from the project repository` : `${project.name} application screenshot`} />
-        <div className="screenshot-shade"/>
-      </> : <>
+    <div className={`project-art art-${project.visual} ${large ? 'art-large' : ''}`}>
         <div className="art-mesh" aria-hidden="true"/>
         <div className="art-panel art-panel-back" aria-hidden="true"/>
         <div className="art-panel art-panel-front">
           <div className="panel-top"><div className="panel-dots"><i/><i/><i/></div><span>{project.name.toUpperCase()}</span><ArrowUpRight size={13}/></div>
           <div className="panel-body"><div className="art-symbol"><Icon size={large ? 54 : 43} strokeWidth={1.35}/></div><div className="panel-lines"><i/><i/><i/></div><div className="panel-number">0{project.slug.length % 7 + 1}<span> / SYSTEM</span></div></div>
         </div>
-      </>}
-      {project.imageKind === 'concept' && <span className="concept-image-label">AI CONCEPT ILLUSTRATION</span>}
-      {project.imageKind === 'illustration' && <span className="concept-image-label">PROJECT ILLUSTRATION</span>}
-      {project.imageKind === 'training' && <span className="concept-image-label">PROJECT TRAINING SAMPLES</span>}
       <div className="art-caption"><small>{label}</small><strong>{line}</strong></div>
     </div>
   );

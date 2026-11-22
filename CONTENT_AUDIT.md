@@ -87,3 +87,10 @@
 - Moved the editable DOCX, obsolete CV helper and unused HealthMate screenshot into ignored local-only/ to keep them off GitHub and outside public hosting. Both approved PDF URLs remain unchanged. Existing maintenance documents are retained. Environment files, local evidence, dependencies and build output remain ignored.
 
 - Final validation: npm ci (zero vulnerabilities), lint, TypeScript and production build passed. Chromium checks at 1440/768/390/320 pixels verified 20 projects, all filters, implementation notes, six credentials, two internship proofs, logo, illustration labels, navigation and unchanged CV bytes. No runtime errors or horizontal overflow. Local evidence stays in ignored test-results/.
+
+## Full-width image presentation - 22 November 2026
+
+- Replaced fixed-height, padded project-image frames with full-width images using their actual source dimensions. All 13 project images keep the complete image visible, without cropping or image overlays. Captions, illustration labels and full-size image links are below the pictures.
+- Enlarged archive cards into two flowing columns on larger screens and one on phones, avoiding gaps from stretching cards with different image proportions.
+- Applied the same natural-proportion presentation to all six certificate previews and the HEC result. Source images and privacy redactions are unchanged.
+- Validated metadata against all 19 project/certificate source files. Lint, TypeScript and production build pass. Chromium checks at 1440, 768, 390 and 320 pixels verify full-width image geometry, original proportions, captions below images, seven complete document previews, project filters and full-size image opening, with no horizontal overflow or runtime errors. Visual screenshots are in ignored test-results/.

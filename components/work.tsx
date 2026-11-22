@@ -32,7 +32,7 @@ function FeaturedProject({ project, index }: { project: Project; index: number }
 
 function CompactProject({ project }: { project: Project }) {
   return <article className="compact-project">
-    <div className="compact-project-art"><ProjectArt project={project}/></div>
+    <div className={`compact-project-art ${project.image ? 'compact-project-image' : ''}`}><ProjectArt project={project}/></div>
     <div className="compact-project-body">
       <div className="compact-category"><span>{project.category}</span>{project.status !== 'Completed' && <span className="development-badge">IN DEVELOPMENT</span>}</div>
       <h3>{project.name}</h3>

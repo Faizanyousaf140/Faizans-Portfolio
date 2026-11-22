@@ -59,8 +59,11 @@ PostHog runs only in production when configured. Autocapture and session recordi
 - `public/education/fast-nuces.webp`: official campus-hosted NUCES logo.
 - `public/certificates/`: four Coursera certificates, two internship documents and the HEC result. The public Digital Genei letter has personal phone/email/address redacted; the HEC preview omits the CNIC. Original local documents are unchanged.
 - `public/projects/`: supplied application screenshots, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).
+
 - `public/companies/` and `public/research/`: Deaimer logo and original article covers.
 - `public/Faizan_Yousaf_Software_Engineer.pdf`: owner-approved latest CV. `/resume.pdf` remains a compatibility URL with identical bytes.
+
+Project and certificate images use `{ src, width, height }` in `data/portfolio.ts` to preserve their original proportions. Project images fill the card width, captions and artwork labels sit below them, and each image opens at full size. The project archive uses two columns on larger screens and one on phones. Certificate and HEC previews also use their natural proportions.
 
 The editable DOCX, obsolete CV-generation helper and unused HealthMate image are retained in ignored `local-only/`, outside the published site. Dependencies, build output, local QA evidence and environment files are ignored. GitHub contains the current Next.js source, required assets and maintenance documentation. Old React/CRACO portfolio directories remain unchanged.
 

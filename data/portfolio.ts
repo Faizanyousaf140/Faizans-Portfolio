@@ -2,6 +2,12 @@
 export type ProjectCategory = 'Full-stack' | 'GenAI / LLMs' | 'NLP' | 'AI / ML' | 'Backend' | 'Testing';
 export type ProjectStatus = 'Completed' | 'In development';
 
+export interface PortfolioImage {
+  src: string;
+  width: number;
+  height: number;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -13,7 +19,7 @@ export interface Project {
   stack: string[];
   github?: string;
   demo?: string;
-  image?: string;
+  image?: PortfolioImage;
   imageKind?: 'screenshot' | 'concept' | 'illustration' | 'training';
   attribution?: string;
   visual: 'knowledge' | 'rental' | 'document' | 'route' | 'clinical' | 'truck' | 'testing' | 'store' | 'meeting' | 'triage' | 'agent' | 'nlp' | 'generative' | 'vision';
@@ -42,7 +48,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'Node.js', 'MongoDB', 'RAG', 'Redis'],
     github: 'https://github.com/Faizanyousaf140/AI-Knowledge-OS',
     demo: 'https://ai-knowledge-os.vercel.app/',
-    image: '/projects/ai-knowledge-os.webp', imageKind: 'illustration', visual: 'knowledge',
+    image: { src: '/projects/ai-knowledge-os.webp', width: 1200, height: 800 }, imageKind: 'illustration', visual: 'knowledge',
   },
   {
     slug: 'rentease-pk', name: 'RentEase PK', eyebrow: 'PRODUCT ENGINEERING',
@@ -60,7 +66,7 @@ export const projects: Project[] = [
     stack: ['PyTorch', 'Qwen2-VL', 'QLoRA', 'Hugging Face', 'Gradio'],
     github: 'https://github.com/Faizanyousaf140/VLM-qlora-doc2markdown',
     demo: 'https://huggingface.co/spaces/Faizan11112/doc2markdown-vlm',
-    image: '/projects/doc2markdown-concept.webp', imageKind: 'concept', visual: 'document',
+    image: { src: '/projects/doc2markdown-concept.webp', width: 1200, height: 800 }, imageKind: 'concept', visual: 'document',
   },
   {
     slug: 'spotter-fuel-route-planner', name: 'Fuel Route Optimizer', eyebrow: 'ALGORITHMS / API DESIGN',
@@ -69,7 +75,7 @@ export const projects: Project[] = [
     detail: 'Django REST APIs combine OSRM routes with fuel-station data and cost constraints to find economical refueling stops. The repository documents 500-mile range and 10-mpg assumptions.',
     stack: ['Python', 'Django REST', 'OSRM', 'Optimization', 'Leaflet'],
     github: 'https://github.com/Faizanyousaf140/spotter-fuel-route-planner',
-    image: '/projects/fuel-route-planner.webp', visual: 'route',
+    image: { src: '/projects/fuel-route-planner.webp', width: 1852, height: 616 }, visual: 'route',
   },
   {
     slug: 'clinical-notes-rag', name: 'Clinical Notes RAG', eyebrow: 'AI / RETRIEVAL',
@@ -78,7 +84,7 @@ export const projects: Project[] = [
     detail: 'Retrieves relevant MIMIC-IV-Ext DiReCT passages with embeddings and FAISS, then provides supporting context alongside generated answers. Research prototype; not a medical device.',
     stack: ['Python', 'FAISS', 'Sentence Transformers', 'LLMs'],
     github: 'https://github.com/Faizanyousaf140/RAG-for-Diagnostic-Reasoning-in-Clinical-Notes-DiReCT-',
-    image: '/projects/clinical-rag.webp', imageKind: 'illustration', visual: 'clinical',
+    image: { src: '/projects/clinical-rag.webp', width: 1200, height: 800 }, imageKind: 'illustration', visual: 'clinical',
   },
   {
     slug: 'eld-trip-planner', name: 'ELD Trip Planner', eyebrow: 'FULL-STACK / TRANSPORT',
@@ -87,7 +93,7 @@ export const projects: Project[] = [
     detail: 'React and Leaflet interface with Django REST APIs and logic for generating drivers’ daily logs from hours-of-service constraints, including the 70-hour/8-day cycle.',
     stack: ['React', 'Django REST', 'PostgreSQL', 'Leaflet'],
     github: 'https://github.com/Faizanyousaf140/eld-trip-planner',
-    image: '/projects/eld-trip-planner.webp', visual: 'truck',
+    image: { src: '/projects/eld-trip-planner.webp', width: 1900, height: 823 }, visual: 'truck',
   },
   {
     slug: 'node-auth-tests', name: 'Authentication & CI Tests', eyebrow: 'TESTING / AUTOMATION',
@@ -104,7 +110,7 @@ export const projects: Project[] = [
     detail: 'A product catalog and shopping experience built with reusable Next.js and TypeScript components, responsive layouts and a consistent design system.',
     stack: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
     github: 'https://github.com/Faizanyousaf140/craftopia-pk',
-    image: '/projects/craftopia-pk.webp', visual: 'store',
+    image: { src: '/projects/craftopia-pk.webp', width: 1581, height: 657 }, visual: 'store',
   },
   {
     slug: 'verbatim-ai', name: 'VerbatimAI', eyebrow: '03 / NLP & MEETING INTELLIGENCE',
@@ -113,7 +119,7 @@ export const projects: Project[] = [
     detail: 'Transcribes recordings with Whisper, extracts summaries and action points, and makes transcripts discoverable through semantic retrieval.',
     stack: ['Python', 'Whisper', 'NLP', 'Streamlit', 'FAISS'],
     github: 'https://github.com/Faizanyousaf140/Verbatim-AI-Project',
-    image: '/projects/verbatim-ai.webp', imageKind: 'illustration', visual: 'meeting',
+    image: { src: '/projects/verbatim-ai.webp', width: 1400, height: 933 }, imageKind: 'illustration', visual: 'meeting',
   },
   {
     slug: 'urdu-transformer-chatbot', name: 'Urdu Transformer Chatbot', eyebrow: 'NLP / CONVERSATIONAL AI',
@@ -122,7 +128,7 @@ export const projects: Project[] = [
     detail: 'PyTorch model, SentencePiece tokenization and a Streamlit interface, with greedy decoding, beam search and top-k sampling for comparing responses.',
     stack: ['PyTorch', 'Transformers', 'SentencePiece', 'Streamlit'],
     github: 'https://github.com/Faizanyousaf140/Conversational-Chatbot-in-Urdu',
-    image: '/projects/urdu-chatbot.webp', imageKind: 'illustration', visual: 'nlp',
+    image: { src: '/projects/urdu-chatbot.webp', width: 1200, height: 800 }, imageKind: 'illustration', visual: 'nlp',
   },
   {
     slug: 'bert-feedback-classifier', name: 'BERT Feedback Classifier', eyebrow: 'NLP / MODEL FINE-TUNING',
@@ -131,7 +137,7 @@ export const projects: Project[] = [
     detail: 'Preprocessing and tokenization feed an encoder-only classification pipeline; evaluation includes precision, recall, F1 and a confusion matrix, with example inference scripts.',
     stack: ['BERT', 'Hugging Face', 'PyTorch', 'Scikit-learn'],
     github: 'https://github.com/Faizanyousaf140/NLP-BERT-Customer-Feedback-Classifier',
-    image: '/projects/bert-feedback-concept.webp', imageKind: 'concept', visual: 'nlp',
+    image: { src: '/projects/bert-feedback-concept.webp', width: 1200, height: 800 }, imageKind: 'concept', visual: 'nlp',
   },
   {
     slug: 't5-bart-summarization', name: 'T5 / BART Summarization', eyebrow: 'NLP / TEXT GENERATION',
@@ -149,7 +155,7 @@ export const projects: Project[] = [
     stack: ['PyTorch', 'WGAN-GP', 'Pix2Pix', 'CycleGAN', 'Gradio'],
     github: 'https://github.com/Faizanyousaf140/Deep-Generative-Models-GAN-Pix2Pix-CycleGan',
     demo: 'https://huggingface.co/spaces/Faizan11112/dcgan-wgan-anime-generation',
-    image: '/projects/gan-comparison.webp', imageKind: 'training', visual: 'generative',
+    image: { src: '/projects/gan-comparison.webp', width: 895, height: 247 }, imageKind: 'training', visual: 'generative',
   },
   {
     slug: 'ddpm-image-generation', name: 'Diffusion Image Generation', eyebrow: 'GENERATIVE AI / DIFFUSION',
@@ -159,7 +165,7 @@ export const projects: Project[] = [
     stack: ['PyTorch', 'DDPM', 'U-Net', 'Gradio'],
     github: 'https://github.com/Faizanyousaf140/Denoising-Diffusion-Probabilistic-Model-DDPM-for-Image-Generation',
     demo: 'https://huggingface.co/spaces/Faizan11112/ddpm-face-generator',
-    image: '/projects/diffusion-concept.webp', imageKind: 'concept', visual: 'generative',
+    image: { src: '/projects/diffusion-concept.webp', width: 1200, height: 800 }, imageKind: 'concept', visual: 'generative',
   },
   {
     slug: 'neural-storyteller', name: 'Neural Storyteller', eyebrow: 'MULTIMODAL / IMAGE CAPTIONING',
@@ -184,7 +190,7 @@ export const projects: Project[] = [
     detail: 'An adapted/forked project exploring Bahdanau attention, character-level tokenization and a Streamlit translation interface using the Rekhta poetry dataset. Original repository attribution is retained on GitHub.',
     stack: ['PyTorch', 'BiLSTM', 'Bahdanau Attention', 'Streamlit'],
     github: 'https://github.com/Faizanyousaf140/Neural-Machine-Translation-Urdu-to-Roman-Urdu',
-    image: '/projects/urdu-translation.webp', imageKind: 'illustration', visual: 'nlp',
+    image: { src: '/projects/urdu-translation.webp', width: 1200, height: 800 }, imageKind: 'illustration', visual: 'nlp',
   },
   {
     slug: 'loan-approval-predictor', name: 'Loan Approval Predictor', eyebrow: 'APPLIED ML / CLASSIFICATION',
@@ -193,7 +199,7 @@ export const projects: Project[] = [
     detail: 'Handles missing values, encodes features and compares scikit-learn classifiers with cross-validation and hyperparameter search; includes Streamlit and CLI prediction interfaces.',
     stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
     github: 'https://github.com/Faizanyousaf140/Loan-Approval-Predictor-App',
-    image: '/projects/loan-approval.webp', imageKind: 'illustration', visual: 'triage',
+    image: { src: '/projects/loan-approval.webp', width: 1400, height: 933 }, imageKind: 'illustration', visual: 'triage',
   },
   {
     slug: 'matacs', name: 'MATACS Proposal Triage', eyebrow: 'DECISION SUPPORT',
@@ -297,16 +303,16 @@ export const skills = [
 ];
 
 export interface Credential {
-  name: string; provider: string; date: string; label: string; image: string; url?: string;
+  name: string; provider: string; date: string; label: string; image: PortfolioImage; url?: string;
 }
 
 export const credentials: Credential[] = [
-  { name: 'Machine Learning Specialization', provider: 'DeepLearning.AI · Stanford Online', date: 'Jul 2025', label: '3-course specialization', image: '/certificates/machine-learning.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Q4A7R6RWXYD3' },
-  { name: 'NLP with Classification and Vector Spaces', provider: 'DeepLearning.AI', date: 'Jul 2025', label: 'Course certificate', image: '/certificates/nlp.webp', url: 'https://www.coursera.org/account/accomplishments/verify/HUZ8D8TG6S7S' },
-  { name: 'AI / ML Internship Experience', provider: 'Digital Genei', date: 'Jul–Aug 2025', label: 'Experience letter · 1 Jul–10 Aug 2025', image: '/certificates/digital-genei-internship.webp' },
-  { name: 'Machine Learning Internship', provider: 'Skillify Zone', date: 'Jul–Aug 2025', label: 'Completion certificate · 10 Jul–10 Aug 2025', image: '/certificates/skillify-zone-internship.webp' },
-  { name: 'Google Prompting Essentials', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-prompting.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/Y67VK3EUY21D' },
-  { name: 'Google Network Security', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: '/certificates/google-network-security.webp', url: 'https://www.coursera.org/account/accomplishments/specialization/7G3G47ELAMCH' },
+  { name: 'Machine Learning Specialization', provider: 'DeepLearning.AI · Stanford Online', date: 'Jul 2025', label: '3-course specialization', image: { src: '/certificates/machine-learning.webp', width: 1600, height: 1237 }, url: 'https://www.coursera.org/account/accomplishments/specialization/Q4A7R6RWXYD3' },
+  { name: 'NLP with Classification and Vector Spaces', provider: 'DeepLearning.AI', date: 'Jul 2025', label: 'Course certificate', image: { src: '/certificates/nlp.webp', width: 1600, height: 1237 }, url: 'https://www.coursera.org/account/accomplishments/verify/HUZ8D8TG6S7S' },
+  { name: 'AI / ML Internship Experience', provider: 'Digital Genei', date: 'Jul–Aug 2025', label: 'Experience letter · 1 Jul–10 Aug 2025', image: { src: '/certificates/digital-genei-internship.webp', width: 800, height: 1131 } },
+  { name: 'Machine Learning Internship', provider: 'Skillify Zone', date: 'Jul–Aug 2025', label: 'Completion certificate · 10 Jul–10 Aug 2025', image: { src: '/certificates/skillify-zone-internship.webp', width: 800, height: 1131 } },
+  { name: 'Google Prompting Essentials', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: { src: '/certificates/google-prompting.webp', width: 1600, height: 1237 }, url: 'https://www.coursera.org/account/accomplishments/specialization/Y67VK3EUY21D' },
+  { name: 'Google Network Security', provider: 'Google', date: 'Aug 2026', label: 'Certificate', image: { src: '/certificates/google-network-security.webp', width: 1600, height: 1237 }, url: 'https://www.coursera.org/account/accomplishments/specialization/7G3G47ELAMCH' },
 ];
 
 export const facts = [

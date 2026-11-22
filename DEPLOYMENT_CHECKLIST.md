@@ -52,3 +52,10 @@ Production: https://faizanyousafs-portfolio.vercel.app and https://faizans-portf
 - [x] Updated GitHub repository description and homepage to the current Next.js/AI engineering portfolio.
 
 Production EmailJS/PostHog settings and a real EmailJS delivery check remain outstanding as described above.
+
+## Full-width image follow-up - 22 November 2026
+
+- [x] Lint, TypeScript and production build pass. Dependency inputs are unchanged.
+- [x] Chromium at 1440/768/390/320 pixels confirms 13 edge-to-edge project images, seven full-width document previews, original image proportions and captions below pictures.
+- [x] Full-size image links open correctly; all project filters and implementation notes work. No runtime errors or horizontal overflow.
+- [x] Source image dimensions are verified; image files, CVs and environment settings are unchanged.
