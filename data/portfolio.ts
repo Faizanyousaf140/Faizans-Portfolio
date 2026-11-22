@@ -141,7 +141,7 @@ export const experience: Experience[] = [
   },
   {
     position: 'Teaching Assistant', organization: 'FAST-NUCES', when: 'Jan 2025 — Jun 2026', kind: 'Part-time',
-    summary: 'Supported four teaching assignments across algorithms, networks and web development.',
+    summary: 'Served as a teaching assistant for four courses across algorithms, networks and web development.',
     details: [
       'Helped students debug assignments and understand data structures, algorithms and web programming.',
       'Supported Computer Networks and Computer Networks Lab activities and assessment.',
@@ -175,6 +175,6 @@ export const credentials = [
 
 export const facts = [
   { value: '2026', label: 'FAST-NUCES CS graduate' },
-  { value: '4', label: 'Teaching assignments' },
+  { value: '4', label: 'Courses as teaching assistant' },
   { value: '97.7th', label: 'HEC skills test percentile' },
 ];
