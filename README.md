@@ -1,338 +1,65 @@
+# Faizan Yousaf — Next.js portfolio
 
+The portfolio uses Next.js 16 App Router, TypeScript and React 19. The green editorial design, project artwork, interactions and reduced-motion support are preserved. Content lives in `data/portfolio.ts`.
 
-# 🚀 **Faizan Yousaf — Portfolio Website**
+## Run locally
 
-![React](https://img.shields.io/badge/React-Frontend-blue?logo=react)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-Styling-38B2AC?logo=tailwind-css)
-![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-A **modern, responsive developer portfolio website** showcasing my **projects, skills, and development journey** as a **Full Stack Developer and AI enthusiast**.
-
-The website is designed with **clean UI/UX, smooth animations, fast performance, and scalability** in mind.
-
----
-
-# 🌐 **Live Repository**
-
-👉 **View Portfolio**
-**Deployed Version Live** -> [Link](https://faizanyousafs-portfolio.vercel.app/)
-
-🔗 **GitHub Repository**
-[https://github.com/Faizanyousaf140/Faizans-Portfolio](https://github.com/Faizanyousaf140/Faizans-Portfolio)
-
----
-
-# 👨‍💻 **About Me**
-
-Hi, I'm **Faizan Yousaf** 👋
-
-💡 **Full Stack Developer**
-🤖 **AI & Machine Learning Enthusiast**
-⚙️ Passionate about building **modern web applications and intelligent systems**
-
-I enjoy developing **scalable full-stack applications, AI-powered tools, and modern user experiences** using the latest technologies.
-
----
-
-# ✨ **Key Features**
-
-### 🎨 **Modern UI Design**
-
-* Clean **monochrome aesthetic**
-* Professional minimal layout
-* Optimized typography
-
-### 📱 **Fully Responsive**
-
-Works seamlessly across:
-
-* 📱 Mobile
-* 📲 Tablet
-* 💻 Desktop
-
-### ⚡ **Smooth Animations**
-
-* Scroll-based animations
-* Interactive transitions
-* Hover effects
-
-### 📧 **Contact Form Integration**
-
-* Powered by **EmailJS**
-* Allows visitors to directly send messages
-
-### 🔔 **Toast Notifications**
-
-* Implemented using **React Hot Toast**
-* Displays user feedback alerts
-
-### 🎯 **Active Navigation**
-
-* Automatically highlights the **current section**
-
-### 🚀 **Performance Optimized**
-
-* Lightweight build
-* Fast loading
-* Optimized components
-
-### 📊 **Analytics Integration**
-
-* Visitor insights powered by **PostHog**
-
----
-
-# 🛠 **Tech Stack**
-
-## ⚙️ Frontend
-
-| Technology          | Purpose                      |
-| ------------------- | ---------------------------- |
-| **React.js**        | User interface development   |
-| **Tailwind CSS**    | Styling framework            |
-| **Lucide React**    | Icons                        |
-| **React Hot Toast** | Notification system          |
-| **EmailJS**         | Contact form email service   |
-| **CRACO**           | React configuration override |
-
----
-
-## 🚀 Deployment
-
-| Platform   | Purpose                |
-| ---------- | ---------------------- |
-| **Vercel** | Hosting and deployment |
-| **GitHub** | Version control        |
-
----
-
-## 📊 Analytics
-
-| Tool        | Purpose           |
-| ----------- | ----------------- |
-| **PostHog** | Product analytics |
-
----
-
-# 📂 **Project Structure**
-
-```
-portfolio-website
-│
-├── frontend
-│   │
-│   ├── public
-│   │   ├── assets
-│   │   │   ├── favicon_io
-│   │   │   ├── images
-│   │   │   └── project-screenshots
-│   │   │
-│   │   ├── favicon.ico
-│   │   ├── site.webmanifest
-│   │   └── index.html
-│   │
-│   ├── src
-│   │   ├── components
-│   │   │   ├── About.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── Experience.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   └── Skills.jsx
-│   │   │
-│   │   ├── data
-│   │   │   └── portfolioData.js
-│   │   │
-│   │   ├── hooks
-│   │   │   └── useScrollAnimation.js
-│   │   │
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── index.css
-│   │
-│   ├── .env
-│   ├── package.json
-│   └── tailwind.config.js
-│
-└── README.md
-```
-
----
-
-# ⚙️ **Getting Started**
-
-## 📋 Prerequisites
-
-Make sure you have installed:
-
-* **Node.js (v16 or higher)**
-* **npm or yarn**
-* **Git**
-
----
-
-# 📥 Installation
-
-### 1️⃣ Clone the Repository
+Use Node.js 22 or newer (minimum 20.9).
 
 ```bash
-git clone https://github.com/Faizanyousaf140/Faizans-Portfolio.git
-cd Faizans-Portfolio/frontend
+npm ci
+# Create .env.local using .env.example as the field reference.
+npm run dev
 ```
 
----
+Open http://localhost:3000. `.env.local` is ignored by Git. Never commit environment files or put private API keys in variables beginning with `NEXT_PUBLIC_`.
 
-### 2️⃣ Install Dependencies
+## Configuration
+
+Set these in `.env.local` for development and in the Vercel project environment for production:
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical production URL, including https:// |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | Existing EmailJS service |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | Existing EmailJS template |
+| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | EmailJS browser public key |
+| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog public project ingestion key |
+| `NEXT_PUBLIC_POSTHOG_HOST` | Existing PostHog ingestion host |
+
+EmailJS browser identifiers and the PostHog ingestion key are public identifiers by design. Next.js embeds `NEXT_PUBLIC_` values in the browser bundle at build time. Private EmailJS keys and PostHog personal API keys must never go in these fields. Changing production values requires a rebuild.
+
+The contact form retains the old template parameters: `from_name`, `from_email`, `subject`, and `message`, with `reply_to` also supplied. It validates required fields, prevents duplicate sends, includes a honeypot and local send throttling, and reports success or failure without discarding a failed message. Direct email remains available if configuration or sending fails. Confirm the EmailJS template recipient and Reply-To setting, and allow the production domain and localhost in EmailJS if domain restrictions are enabled. Client-side spam checks supplement EmailJS provider protections.
+
+PostHog initializes only in production when both settings are present. It records page visits and departures with identified-only profiles. Autocapture and session recordings are disabled so contact messages are not recorded. Analytics loading failures do not interrupt the portfolio.
+
+## Assets and content
+
+- `public/images/faizan-newest.webp`: optimized copy of the supplied latest JPEG, with orientation normalized and metadata removed. Next.js serves responsive sizes.
+- `public/Faizan_Yousaf_Software_Engineer.pdf`: downloadable copy of the owner-confirmed latest `public/resume.pdf`. Both URLs remain available.
+- `public/resume.docx`: existing editable CV source. Export future approved edits to both PDF filenames.
+- `data/portfolio.ts`: project repositories, experience, skills and certificate links. Missing Coursera destinations were recovered from the CV document.
+- `components/contact.tsx`: contact form, direct email and clipboard action.
+- `instrumentation-client.ts`: PostHog initialization.
+- `app/globals.css`: existing design and responsive form styling.
+
+The old local React/CRACO portfolios are reference material and are unchanged. The replacement GitHub commit removes the old CRA source and tracked `.env` from the current repository tree. Git history is preserved.
+
+## Validation
 
 ```bash
-npm install --legacy-peer-deps
-```
-
----
-
-### 3️⃣ Setup Environment Variables
-
-Create a `.env` file in **frontend/**
-
-```
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
----
-
-### 4️⃣ Run Development Server
-
-```
-npm start
-```
-
-Open in browser:
-
-```
-http://localhost:3000
-```
-
----
-
-# 📧 **Contact Form Setup**
-
-The contact form uses **EmailJS**.
-
-Template variables required:
-
-```
-{{from_name}}
-{{from_email}}
-{{subject}}
-{{message}}
-```
-
-Add the credentials in the `.env` file.
-
----
-
-# 🎨 **Customization**
-
-### Update Portfolio Content
-
-Modify:
-
-```
-src/data/portfolioData.js
-```
-
-You can change:
-
-* Personal information
-* Skills
-* Projects
-* Experience
-* Social links
-
----
-
-### Modify Colors
-
-Edit:
-
-```
-tailwind.config.js
-```
-
-Example:
-
-```javascript
-colors: {
-  dark: {
-    900: "#000000",
-    800: "#0a0a0a"
-  }
-}
-```
-
----
-
-# 📦 **Production Build**
-
-```
+npm run lint
+npm run typecheck
 npm run build
+npm run start
 ```
 
-This generates an optimized production build.
+See `DEPLOYMENT_CHECKLIST.md` for verification results and outstanding deployment steps. Contact transport tests use an intercepted EmailJS response; live email delivery must be confirmed through the configured EmailJS account.
 
----
+## Redeploy the existing Vercel project
 
-# 🚀 **Deployment**
+Use `Faizanyousaf140/Faizans-Portfolio`, production branch `main`. `vercel.json` declares the Next.js preset, `npm ci`, `npm run build` and `.next` output. Set Vercel Root Directory to the repository root; clear any old frontend directory setting. Replace old `REACT_APP_*` variables with the variables above in Vercel, then redeploy after pushing.
 
-### Deploy to Vercel
+The previous public portfolio responds at https://faizanyousafs-portfolio.vercel.app and https://faizans-portfolio-seven.vercel.app. The former is used for canonical URLs to match the current CV. Preserve existing domain assignments when redeploying.
 
-1. Push code to **GitHub**
-2. Go to **Vercel**
-3. Import repository
-4. Set **Root Directory → frontend**
-5. Add environment variables
-6. Click **Deploy**
-
----
-
-# 📈 **Future Enhancements**
-
-* Blog section
-* Dark / Light mode
-* Project filtering
-* CMS integration
-* Testimonials
-* Resume download
-* Multi-language support
-
----
-
-# 👨‍💻 **Author**
-
-**Faizan Yousaf**
-
-💻 GitHub
-[https://github.com/Faizanyousaf140](https://github.com/Faizanyousaf140)
-
-💼 LinkedIn
-[http://www.linkedin.com/in/faizan-yousaf1/in/](http://www.linkedin.com/in/faizan-yousaf1/in/)
-
-📧 Email
-[faizanyousaf140@gmail.com](mailto:faizanyousaf140@gmail.com)
-
----
-
-# ⭐ **Support**
-
-If you like this project, please give it a **⭐ on GitHub**.
-
----
-
-💙 **Built with passion by Faizan Yousaf**
-
----
+`CONTENT_AUDIT.md` retains the original content review and date discrepancies requiring owner verification.
