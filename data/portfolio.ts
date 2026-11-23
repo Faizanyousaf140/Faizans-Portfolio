@@ -1,5 +1,5 @@
 /** Portfolio content lives here so updates never require editing UI components. */
-export type ProjectCategory = 'Full-stack' | 'GenAI / LLMs' | 'NLP' | 'AI / ML' | 'Backend' | 'Testing';
+export type ProjectCategory = 'Full-stack' | 'LLMs / RAG' | 'NLP' | 'Generative AI' | 'Computer Vision' | 'AI / ML' | 'Backend' | 'Testing';
 export type ProjectStatus = 'Completed' | 'In development';
 
 export interface PortfolioImage {
@@ -19,24 +19,29 @@ export interface Project {
   stack: string[];
   github?: string;
   demo?: string;
+  demoLabel?: string;
+  demoNote?: string;
   image?: PortfolioImage;
   imageKind?: 'screenshot' | 'concept' | 'illustration' | 'training';
   attribution?: string;
   visual: 'knowledge' | 'rental' | 'document' | 'route' | 'clinical' | 'truck' | 'testing' | 'store' | 'meeting' | 'triage' | 'agent' | 'nlp' | 'generative' | 'vision';
   featured?: boolean;
+  selected?: boolean;
+  evaluation?: { value: string; detail: string; url: string };
 }
 
 export const profile = {
   fullName: 'Muhammad Faizan Yousaf',
   shortName: 'Faizan Yousaf',
-  role: 'Full-Stack AI Engineer · AI / ML & NLP',
+  role: 'Software Engineer · AI/LLM Applications & Evaluation',
+  jobTitle: 'Software Engineer — AI Evaluation',
   location: 'Faisalabad, Pakistan',
   email: 'faizanyousaf140@gmail.com',
   github: 'https://github.com/Faizanyousaf140',
   linkedin: 'https://www.linkedin.com/in/faizan-yousaf1/',
   huggingface: 'https://huggingface.co/Faizan11112/spaces',
   resume: '/Faizan_Yousaf_Software_Engineer.pdf',
-  bio: 'I build full-stack AI products, LLM applications and NLP systems, connecting responsive interfaces and reliable APIs with retrieval, model fine-tuning and evaluation. At Deaimer, I contribute coding tasks and harnesses to frontier-model training and evaluation workflows.',
+  bio: 'I build LLM applications and evaluation harnesses for coding agents. At Deaimer, I prepare coding tasks, reference solutions and automated verifiers. My product work combines Next.js, TypeScript and Python with retrieval and model fine-tuning.',
 };
 
 export const projects: Project[] = [
@@ -48,7 +53,9 @@ export const projects: Project[] = [
     stack: ['Next.js', 'Node.js', 'MongoDB', 'RAG', 'Redis'],
     github: 'https://github.com/Faizanyousaf140/AI-Knowledge-OS',
     demo: 'https://ai-knowledge-os.vercel.app/',
-    image: { src: '/projects/ai-knowledge-os.webp', width: 1200, height: 800 }, imageKind: 'illustration', visual: 'knowledge',
+    demoLabel: 'Frontend preview',
+    demoNote: 'The public preview exposes the starter interface. API and RAG implementation is available in the source repository.',
+    image: { src: '/projects/ai-knowledge-os-preview.webp', width: 1440, height: 520 }, imageKind: 'screenshot', visual: 'knowledge',
   },
   {
     slug: 'rentease-pk', name: 'RentEase PK', eyebrow: 'PRODUCT ENGINEERING',
@@ -60,26 +67,29 @@ export const projects: Project[] = [
   },
   {
     slug: 'doc2markdown', name: 'Document-to-Markdown VLM', eyebrow: '02 / MULTIMODAL & LLM FINE-TUNING',
-    category: 'GenAI / LLMs', status: 'Completed', featured: true,
+    category: 'LLMs / RAG', status: 'Completed', featured: true,
     description: 'Fine-tuning a vision-language model to understand document layouts.',
     detail: 'Fine-tuned Qwen2-VL-2B with QLoRA/PEFT to transform document-page images into structured Markdown; packaged a Gradio interface for inspection.',
     stack: ['PyTorch', 'Qwen2-VL', 'QLoRA', 'Hugging Face', 'Gradio'],
     github: 'https://github.com/Faizanyousaf140/VLM-qlora-doc2markdown',
     demo: 'https://huggingface.co/spaces/Faizan11112/doc2markdown-vlm',
+    demoNote: 'The Hugging Face demo may need to wake before inference is available.',
+    evaluation: { value: 'Test ROUGE-L: 0.57', detail: 'Repository-reported result on its unseen test split; validation ROUGE-L is 0.63.', url: 'https://github.com/Faizanyousaf140/VLM-qlora-doc2markdown/blob/main/README.md' },
     image: { src: '/projects/doc2markdown-concept.webp', width: 1200, height: 800 }, imageKind: 'concept', visual: 'document',
   },
   {
     slug: 'spotter-fuel-route-planner', name: 'Fuel Route Optimizer', eyebrow: 'ALGORITHMS / API DESIGN',
-    category: 'Backend', status: 'Completed',
+    category: 'Backend', status: 'Completed', selected: true,
     description: 'Cost-aware routing with optimal fuel stops and an interactive map.',
     detail: 'Django REST APIs combine OSRM routes with fuel-station data and cost constraints to find economical refueling stops. The repository documents 500-mile range and 10-mpg assumptions.',
     stack: ['Python', 'Django REST', 'OSRM', 'Optimization', 'Leaflet'],
     github: 'https://github.com/Faizanyousaf140/spotter-fuel-route-planner',
+    evaluation: { value: '178 documented tests', detail: 'Repository reports 175 offline and 3 live tests passing on 17 November 2026.', url: 'https://github.com/Faizanyousaf140/spotter-fuel-route-planner/blob/main/README.md' },
     image: { src: '/projects/fuel-route-planner.webp', width: 1852, height: 616 }, visual: 'route',
   },
   {
     slug: 'clinical-notes-rag', name: 'Clinical Notes RAG', eyebrow: 'AI / RETRIEVAL',
-    category: 'GenAI / LLMs', status: 'Completed',
+    category: 'LLMs / RAG', status: 'Completed', selected: true,
     description: 'Evidence-grounded question answering over clinical research notes.',
     detail: 'Retrieves relevant MIMIC-IV-Ext DiReCT passages with embeddings and FAISS, then provides supporting context alongside generated answers. Research prototype; not a medical device.',
     stack: ['Python', 'FAISS', 'Sentence Transformers', 'LLMs'],
@@ -88,11 +98,12 @@ export const projects: Project[] = [
   },
   {
     slug: 'eld-trip-planner', name: 'ELD Trip Planner', eyebrow: 'FULL-STACK / TRANSPORT',
-    category: 'Full-stack', status: 'Completed',
+    category: 'Full-stack', status: 'Completed', selected: true,
     description: 'Route planning and driver daily-log generation in one application.',
     detail: 'React and Leaflet interface with Django REST APIs and logic for generating drivers’ daily logs from hours-of-service constraints, including the 70-hour/8-day cycle.',
     stack: ['React', 'Django REST', 'PostgreSQL', 'Leaflet'],
     github: 'https://github.com/Faizanyousaf140/eld-trip-planner',
+    demo: 'https://eld-trip-planner-gilt.vercel.app/',
     image: { src: '/projects/eld-trip-planner.webp', width: 1900, height: 823 }, visual: 'truck',
   },
   {
@@ -110,6 +121,7 @@ export const projects: Project[] = [
     detail: 'A product catalog and shopping experience built with reusable Next.js and TypeScript components, responsive layouts and a consistent design system.',
     stack: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
     github: 'https://github.com/Faizanyousaf140/craftopia-pk',
+    demo: 'https://craftopia-pk.vercel.app/',
     image: { src: '/projects/craftopia-pk.webp', width: 1581, height: 657 }, visual: 'store',
   },
   {
@@ -149,7 +161,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'deep-generative-models', name: 'GANs & Image Translation', eyebrow: 'GENERATIVE AI / VISION',
-    category: 'GenAI / LLMs', status: 'Completed',
+    category: 'Generative AI', status: 'Completed',
     description: 'DCGAN, WGAN-GP, Pix2Pix and CycleGAN experiments in generation and image translation.',
     detail: 'Compares adversarial training and mode collapse, then explores paired sketch colorization and unpaired sketch–photo translation with interactive Streamlit and Gradio interfaces.',
     stack: ['PyTorch', 'WGAN-GP', 'Pix2Pix', 'CycleGAN', 'Gradio'],
@@ -159,7 +171,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'ddpm-image-generation', name: 'Diffusion Image Generation', eyebrow: 'GENERATIVE AI / DIFFUSION',
-    category: 'GenAI / LLMs', status: 'Completed',
+    category: 'Generative AI', status: 'Completed',
     description: 'A PyTorch DDPM implementation exploring image generation through iterative denoising.',
     detail: 'Implements a U-Net with residual blocks, attention and time embeddings, a cosine noise schedule and a Gradio interface for sampling. An educational model trained on CelebA-HQ.',
     stack: ['PyTorch', 'DDPM', 'U-Net', 'Gradio'],
@@ -169,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'neural-storyteller', name: 'Neural Storyteller', eyebrow: 'MULTIMODAL / IMAGE CAPTIONING',
-    category: 'NLP', status: 'Completed',
+    category: 'Computer Vision', status: 'Completed',
     description: 'Image-to-text caption generation with a ResNet-50 encoder and LSTM decoder.',
     detail: 'An academic Flickr30k captioning project with a Streamlit interface, comparing greedy decoding and beam search with BLEU and qualitative examples.',
     stack: ['PyTorch', 'ResNet-50', 'LSTM', 'BLEU', 'Streamlit'],
@@ -177,7 +189,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'masked-autoencoder', name: 'Masked Autoencoder / ViT', eyebrow: 'SELF-SUPERVISED / VISION',
-    category: 'AI / ML', status: 'Completed',
+    category: 'Computer Vision', status: 'Completed',
     description: 'Self-supervised visual representation learning by reconstructing masked image patches.',
     detail: 'A PyTorch MAE implementation on TinyImageNet using an asymmetric Vision Transformer encoder–decoder, random patch masking, mixed precision and reconstruction loss.',
     stack: ['PyTorch', 'Vision Transformers', 'MAE', 'TinyImageNet'],
@@ -221,6 +233,8 @@ export const projects: Project[] = [
 
 export interface Experience {
   position: string; organization: string; when: string; kind: string; summary: string; details: string[];
+  focus?: string;
+  organizationDescription?: string;
   logo?: string;
   organizationUrl?: string;
   authorUrl?: string;
@@ -232,7 +246,9 @@ export const deaimerAuthorUrl = 'https://www.deaimer.com/research/authors/R4hfwa
 
 export const experience: Experience[] = [
   {
-    position: 'Software Engineer · Frontier LLM Development', organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
+    position: profile.jobTitle, organization: 'Deaimer', when: 'Jun 2026 — Present', kind: 'Full-time · On-site',
+    focus: 'LLM Evaluation & Agent Harnesses',
+    organizationDescription: 'AI research lab building reinforcement-learning environments, coding-agent benchmarks and evaluation datasets.',
     logo: '/companies/deaimer.png', organizationUrl: 'https://www.deaimer.com/', authorUrl: deaimerAuthorUrl,
     summary: 'Contribute coding tasks and evaluation harnesses to frontier LLM training and evaluation workflows, working across autonomous agents, benchmarks and reliable task environments.',
     models: ['GPT-6 Astra', 'GPT-5.6 Sol', 'Claude Opus 5', 'Claude Opus 5.5', 'Claude Sonnet 5.5'],
@@ -246,7 +262,7 @@ export const experience: Experience[] = [
   },
   {
     position: 'Teaching Assistant', organization: 'FAST-NUCES', when: 'Jan 2025 — Jun 2026', kind: 'Part-time',
-    summary: 'Served as a teaching assistant for four courses across algorithms, networks and web development.',
+    summary: 'Supported four courses part-time across algorithms, networks and web development, including during the 2025 internships.',
     details: [
       'Helped students debug assignments and understand data structures, algorithms and web programming.',
       'Supported Computer Networks and Computer Networks Lab activities and assessment.',
@@ -254,13 +270,13 @@ export const experience: Experience[] = [
   },
   {
     position: 'AI / Software Engineering Intern', organization: 'Digital Genei', when: 'Jul — Aug 2025', kind: 'On-site',
-    summary: 'Built components for a searchable meeting intelligence application.',
+    summary: 'Built components for a searchable meeting intelligence application. Skillify Zone and teaching assistant work ran concurrently on a part-time basis.',
     details: ['Integrated Whisper transcription, NLP summarization and FAISS-based semantic retrieval with Python REST endpoints.'],
     certificate: { label: 'View experience letter · 1 Jul–10 Aug 2025', image: '/certificates/digital-genei-internship.webp' },
   },
   {
-    position: 'Machine Learning Intern', organization: 'Skillify Zone', when: 'Jul — Aug 2025', kind: 'Remote',
-    summary: 'Developed and evaluated a loan-approval prediction workflow.',
+    position: 'Machine Learning Intern', organization: 'Skillify Zone', when: 'Jul — Aug 2025', kind: 'Remote · Part-time',
+    summary: 'Developed and evaluated a loan-approval prediction workflow during a part-time internship, concurrent with Digital Genei and teaching assistant work.',
     details: ['Prepared tabular data, trained scikit-learn classifiers and presented results with a Streamlit interface.'],
     certificate: { label: 'View internship certificate · 10 Jul–10 Aug 2025', image: '/certificates/skillify-zone-internship.webp' },
   },
@@ -270,7 +286,7 @@ export const research = [
   {
     slug: 'quantum-migration',
     title: 'The Quantum Migration Problem: Can the World Replace Its Cryptography Before It Becomes Obsolete?',
-    topic: 'AI Safety & Ethics', date: '2026-11-03',
+    topic: 'Security & Cryptography', date: '2026-11-03',
     description: 'Post-quantum migration, cryptographic agility and hybrid protocols, with a proposed framework for assessing readiness.',
     url: 'https://www.deaimer.com/research/the-quantum-migration-problem-can-the-world-replace-its-cryp-41fc3427',
     image: '/research/quantum-migration.webp',
@@ -294,12 +310,12 @@ export const research = [
 ];
 
 export const skills = [
-  { title: 'Frontend & products', tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Responsive UI'] },
+  { title: 'Frontend engineering', tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS'] },
   { title: 'Backend & systems', tags: ['Python', 'Django REST', 'FastAPI', 'Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MongoDB'] },
   { title: 'GenAI & LLM engineering', tags: ['RAG', 'FAISS', 'Hugging Face', 'Qwen2-VL', 'QLoRA / PEFT', 'Tool Calling'] },
   { title: 'NLP & machine learning', tags: ['PyTorch', 'Transformers', 'BERT', 'T5 / BART', 'Whisper', 'Scikit-learn', 'GANs', 'Diffusion'] },
-  { title: 'Frontier models & agents', tags: ['GPT', 'Claude', 'Codex', 'Claude Code', 'Harness Engineering', 'Agent Evaluation', 'Coding-task Design'] },
-  { title: 'Testing & delivery', tags: ['Docker', 'Linux', 'pytest', 'Git', 'GitHub Actions', 'Jenkins', 'API Testing'] },
+  { title: 'Agent tools & evaluation', tags: ['GPT', 'Claude', 'Codex', 'Claude Code', 'Evaluation Harnesses', 'Tool Calling', 'Coding-task Design'] },
+  { title: 'Testing & delivery', tags: ['Docker', 'Linux', 'pytest', 'Git', 'Jenkins', 'API Testing'] },
 ];
 
 export interface Credential {
@@ -318,5 +334,5 @@ export const credentials: Credential[] = [
 export const facts = [
   { value: '2026', label: 'FAST-NUCES CS graduate' },
   { value: '4', label: 'Courses as teaching assistant' },
-  { value: '97.7th', label: 'HEC skills test percentile' },
+  { value: '97.7th', label: 'HEC National Skills Competency Test percentile' },
 ];

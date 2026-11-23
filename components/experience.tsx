@@ -22,9 +22,11 @@ export function Experience() {
                 <div className="timeline-heading-text">
                   <div className="timeline-meta"><span>{item.when}</span><span>{item.kind}</span></div>
                   <h3>{item.position}</h3>
+                  {item.focus && <p className="timeline-focus">{item.focus}</p>}
                   <div className="timeline-org">{item.logo && item.organizationUrl ? <a className="timeline-company-logo" href={item.organizationUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.organization}`}><Image src={item.logo} alt={item.organization} width={199} height={48} sizes="166px" /></a> : item.organization}</div>
                 </div>
               </div>
+              {item.organizationDescription && <p className="timeline-company-description">{item.organizationDescription}</p>}
               <p className="timeline-summary">{item.summary}</p>
               <ul>{item.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
               {item.models && <div className="experience-models"><span>MODELS WORKED WITH</span><div className="tech-list">{item.models.map(model => <span key={model}>{model}</span>)}</div></div>}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "generatedConcepts": {
     "tool": "Built-in image_gen.imagegen",
     "displayLabel": "AI CONCEPT ILLUSTRATION",
@@ -24,13 +24,17 @@
     "displayLabel": "PROJECT ILLUSTRATION",
     "purpose": "Overview artwork retained from the owner's old portfolio; illustrative interfaces and pictured numbers are not presented as live screenshots or measured model results.",
     "assets": [
-      { "path": "public/projects/ai-knowledge-os.webp", "source": "AI Knowledge OS.png" },
       { "path": "public/projects/clinical-rag.webp", "source": "RAG.png" },
       { "path": "public/projects/urdu-chatbot.webp", "source": "Conversational chatbot.png" },
       { "path": "public/projects/urdu-translation.webp", "source": "NMT urdu to roman urdu.png" }
     ]
   },
   "sourcedAssets": [
+    {
+      "path": "public/projects/ai-knowledge-os-preview.webp",
+      "source": "https://ai-knowledge-os.vercel.app/",
+      "description": "Actual public starter frontend captured in Chromium on 23 November 2026 at 1440 x 520. Converted to WebP at quality 85. The card explicitly distinguishes this frontend preview from the repository's API/RAG implementation; no model results are pictured. The previous illustration is retained only in ignored local-only/."
+    },
     {
       "path": "public/education/fast-nuces.webp",
       "source": "https://cfd.nu.edu.pk/wp-content/uploads/2019/07/cropped-250px-National_University_of_Computer_and_Emerging_Sciences_logo-192x192.png",

@@ -1,4 +1,4 @@
-# Verification and deployment — 22 November 2026
+# Verification and deployment — updated 23 November 2026
 
 ## Completed locally
 
@@ -32,7 +32,7 @@ Browser evidence and the local smoke-test script are in ignored `test-results/`.
 - [x] `vercel.json` supplies the successful Next.js install/build/output settings.
 - [ ] Refresh Vercel CLI authentication to manage project environment variables. A saved CLI login exists, but the API rejects its expired token; device sign-in is required.
 - [ ] Add the six variables from `.env.local` to the Vercel production environment through its secure settings. Do not commit that file. Public client identifiers are embedded at build time, so redeploy after setting them.
-- [ ] Redeploy after adding environment variables. The live form currently displays the direct-email fallback because EmailJS settings are absent in the production build.
+- [ ] Redeploy after adding environment variables. Until then, the contact section shows direct email and copy-address actions; the unconfigured form is omitted.
 - [ ] Confirm a real contact submission arrives using the configured EmailJS account, template recipient, Reply-To and allowed domains.
 - [ ] Verify production PostHog events in its dashboard and confirm the deployed CV, portrait and mobile layout.
 
@@ -59,3 +59,15 @@ Production EmailJS/PostHog settings and a real EmailJS delivery check remain out
 - [x] Chromium at 1440/768/390/320 pixels confirms 13 edge-to-edge project images, seven full-width document previews, original image proportions and captions below pictures.
 - [x] Full-size image links open correctly; all project filters and implementation notes work. No runtime errors or horizontal overflow.
 - [x] Source image dimensions are verified; image files, CVs and environment settings are unchanged.
+
+## Content review follow-up - 23 November 2026
+
+- [x] Reconciled the confirmed title, certificate dates, concurrent part-time roles and four-course teaching description across the site and reviewed CV; retained the approved public phone number.
+- [x] Preserved original CV/source backups in ignored `local-only/`; verified the new PDF is one page with correct text, working links and identical bytes at both public URLs.
+- [x] Tested configured contact validation, honeypot, duplicate protection, success/reset and failure recovery using intercepted EmailJS transport. No real messages sent.
+- [x] Six selected projects by default, expandable 20-project archive, all eight categories, natural image proportions, certificate expansion and research labels verified in Chromium.
+- [x] Checked desktop navigation and mobile menu behavior at 1440, 980, 768, 390 and 320 pixels with no overflow, overlap or runtime errors.
+- [x] Verified Person JSON-LD, absence of keywords metadata, CV download, clipboard and metadata routes.
+- [x] Added sourced VLM/test evidence, working ELD/Craftopia links and an authentic AI Knowledge OS starter-frontend screenshot with an accurate preview label. Retained honest labels on concept illustrations.
+- [x] Final lint, TypeScript and production build pass. An unconfigured production build was also tested: no form is rendered, and email/copy actions work. Dependency inputs are unchanged from the successful clean install and zero-vulnerability audit.
+- [ ] Production EmailJS/PostHog configuration and a real delivery check remain optional activation steps as described above. Additional project metrics and a VLM before/after example require authentic results rather than inferred numbers or generated proof.

@@ -1,8 +1,8 @@
-# Faizan Yousaf — Full-Stack AI, ML & NLP Engineer
+# Faizan Yousaf — Software Engineer, AI/LLM Applications & Evaluation
 
 [Portfolio](https://faizanyousafs-portfolio.vercel.app) · [GitHub](https://github.com/Faizanyousaf140) · [LinkedIn](https://www.linkedin.com/in/faizan-yousaf1/) · [Hugging Face](https://huggingface.co/Faizan11112/spaces)
 
-I build full-stack AI products, LLM applications and NLP systems, connecting responsive interfaces and Python APIs with retrieval, model fine-tuning and evaluation. I am a FAST-NUCES computer science graduate and Software Engineer at Deaimer, contributing coding tasks, reproducible environments and automated verifiers to frontier-model training and evaluation workflows.
+I build LLM applications and evaluation harnesses for coding agents. I am a FAST-NUCES computer science graduate and Software Engineer — AI Evaluation at Deaimer, preparing coding tasks, reference solutions, reproducible environments and automated verifiers. My product work combines Next.js, TypeScript and Python with retrieval, model fine-tuning and NLP.
 
 ## Selected work
 
@@ -11,12 +11,15 @@ I build full-stack AI products, LLM applications and NLP systems, connecting res
 | Full-stack AI | AI Knowledge OS: contextual RAG chat, semantic search, APIs and background embedding jobs |
 | Multimodal fine-tuning | Document-to-Markdown VLM: Qwen2-VL-2B with QLoRA/PEFT and Gradio |
 | Speech and NLP | VerbatimAI: Whisper transcription, summarization and semantic retrieval |
-| NLP | Urdu Transformer chatbot, BERT feedback classification, T5/BART summarization, image captioning and Clinical Notes RAG |
-| Generative vision | DDPM, DCGAN/WGAN-GP, Pix2Pix/CycleGAN and MAE/ViT |
+| NLP and retrieval | Urdu Transformer chatbot, BERT feedback classification, T5/BART summarization and Clinical Notes RAG |
+| Generative AI | DDPM, DCGAN/WGAN-GP and Pix2Pix/CycleGAN |
+| Computer vision | Neural Storyteller image captioning and MAE/ViT |
 | Applied ML | Loan Approval Predictor: data preparation, classifier comparison and prediction interfaces |
 | Product and backend | RentEase PK, Fuel Route Optimizer, ELD Trip Planner, Craftopia.pk and authentication/CI automation |
 
-The site links 20 projects with GenAI/LLM, NLP, AI/ML, full-stack, backend and testing filters. The Urdu-to-Roman-Urdu study is attributed as an adapted/forked academic project. AgentQA Cloud is marked in development, with planned features identified explicitly.
+The homepage shows six selected projects. An expandable archive retains all 20, with eight category filters covering LLMs/RAG, NLP, generative AI, computer vision, AI/ML, full-stack, backend and testing. The Urdu-to-Roman-Urdu study is attributed as an adapted/forked academic project. AgentQA Cloud is marked in development, with planned features identified explicitly. Cards without screenshots use text rather than decorative placeholders.
+
+The VLM card links its repository-reported test ROUGE-L of 0.57 (validation: 0.63). The Fuel Route Optimizer links its documented 178-test run from 17 November 2026. These are repository-reported results, not benchmarks independently rerun during portfolio maintenance. Working ELD Trip Planner and Craftopia demos are linked. AI Knowledge OS is labeled as a starter frontend preview, separate from the API/RAG implementation in its source; its card uses a real browser capture. The VLM demo may need to wake before inference is available.
 
 At Deaimer, I work on coding-task preparation, Docker/Linux harnesses, tool calling, reference solutions, automated verification and failure analysis. Models worked with include GPT-6 Astra, GPT-5.6 Sol, Claude Opus 5, Opus 5.5 and Sonnet 5.5; tools include Codex and Claude Code. The role describes contributions through training/evaluation tasks and harnesses. Three published Deaimer research perspectives are linked with their PDFs.
 
@@ -49,7 +52,7 @@ Set these in ignored `.env.local` for development and in Vercel for production:
 
 These client identifiers are public by design and embedded at build time. Private API keys must never use `NEXT_PUBLIC_`. Environment files stay out of Git; `.env.example` contains placeholders only. Rebuild after changing production values.
 
-The EmailJS form supplies `from_name`, `from_email`, `subject`, `message` and `reply_to`. It includes validation, a honeypot, duplicate-send protection, local throttling and failure recovery. Confirm the recipient, Reply-To and allowed domains in EmailJS. Direct email is available when sending is unconfigured or fails.
+The EmailJS form appears only when all three EmailJS identifiers are configured. Otherwise, the contact section provides working email and copy-address actions. The form supplies `from_name`, `from_email`, `subject`, `message` and `reply_to`, with validation, a honeypot, duplicate-send protection, local throttling and failure recovery. Confirm the recipient, Reply-To and allowed domains in EmailJS.
 
 PostHog runs only in production when configured. Autocapture and session recordings are disabled, contact text is not captured, and analytics failures do not interrupt the site.
 
@@ -58,14 +61,16 @@ PostHog runs only in production when configured. Autocapture and session recordi
 - `public/images/faizan-newest.webp`: optimized latest portrait, served responsively by Next.js.
 - `public/education/fast-nuces.webp`: official campus-hosted NUCES logo.
 - `public/certificates/`: four Coursera certificates, two internship documents and the HEC result. The public Digital Genei letter has personal phone/email/address redacted; the HEC preview omits the CNIC. Original local documents are unchanged.
-- `public/projects/`: supplied application screenshots, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).
+- `public/projects/`: supplied application screenshots, an actual AI Knowledge OS frontend preview, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).
 
 - `public/companies/` and `public/research/`: Deaimer logo and original article covers.
-- `public/Faizan_Yousaf_Software_Engineer.pdf`: owner-approved latest CV. `/resume.pdf` remains a compatibility URL with identical bytes.
+- `public/Faizan_Yousaf_Software_Engineer.pdf`: reviewed one-page CV, reconciled with the site on 23 November 2026. It uses the confirmed Deaimer title, certificate dates and concurrent part-time context, and retains the owner's approved phone number. `/resume.pdf` is a compatibility URL with identical bytes.
 
 Project and certificate images use `{ src, width, height }` in `data/portfolio.ts` to preserve their original proportions. Project images fill the card width, captions and artwork labels sit below them, and each image opens at full size. The project archive uses two columns on larger screens and one on phones. Certificate and HEC previews also use their natural proportions.
 
-The editable DOCX, obsolete CV-generation helper and unused HealthMate image are retained in ignored `local-only/`, outside the published site. Dependencies, build output, local QA evidence and environment files are ignored. GitHub contains the current Next.js source, required assets and maintenance documentation. Old React/CRACO portfolio directories remain unchanged.
+The reviewed editable source is `local-only/resume-reviewed.docx`, with local HTML/PDF export helpers. Original CV/source backups, the obsolete CV helper and unused assets remain in ignored `local-only/`, outside the published site. Dependencies, build output, local QA evidence and environment files are ignored. GitHub contains the current Next.js source, required assets and maintenance documentation. Old React/CRACO portfolio directories remain unchanged.
+
+Research is labeled as perspectives published on the employer's research platform. The quantum migration article is categorized as Security & Cryptography. Person JSON-LD uses the same confirmed job title and profile links as the visible site.
 
 ## Validation and deployment
 

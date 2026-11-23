@@ -7,11 +7,11 @@ export function Hero() {
     <section className="hero-section" id="top" aria-labelledby="hero-title">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <div className="availability"><span className="status-dot"/> OPEN TO ENGINEERING OPPORTUNITIES <span className="availability-line" /></div>
+          <div className="availability"><span className="status-dot"/> OPEN TO AI ENGINEERING ROLES <span className="availability-line" /></div>
           <div className="hero-intro"><span className="eyebrow-line" /> MUHAMMAD FAIZAN YOUSAF</div>
-          <h1 id="hero-title">Building for <span className="hero-emphasis">the web.</span><br />Thinking <span className="hero-outline">beyond.</span></h1>
+          <h1 id="hero-title">Building <span className="hero-emphasis">AI.</span><br />Testing <span className="hero-outline">its limits.</span></h1>
           <p className="hero-role">{profile.role}</p>
-          <p className="hero-lede">I build <strong>full-stack AI products</strong>, from Next.js interfaces and backend APIs to <strong>LLM applications, NLP models and evaluation harnesses</strong>. My work connects product engineering with practical machine learning.</p>
+          <p className="hero-lede">I build <strong>LLM applications</strong> and the harnesses that test coding agents. At Deaimer, I prepare coding tasks, reference solutions and <strong>automated verifiers</strong>. My product work uses Next.js, TypeScript and Python.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <ArrowUpRight size={18}/></a>
             <a className="button button-outline" href={profile.resume} download="Faizan_Yousaf_Software_Engineer.pdf">Download résumé <ArrowUpRight size={16}/></a>

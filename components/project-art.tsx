@@ -60,7 +60,7 @@ export function ProjectArt({ project, large = false }: { project: Project; large
         <div className="art-panel art-panel-back" aria-hidden="true"/>
         <div className="art-panel art-panel-front">
           <div className="panel-top"><div className="panel-dots"><i/><i/><i/></div><span>{project.name.toUpperCase()}</span><ArrowUpRight size={13}/></div>
-          <div className="panel-body"><div className="art-symbol"><Icon size={large ? 54 : 43} strokeWidth={1.35}/></div><div className="panel-lines"><i/><i/><i/></div><div className="panel-number">0{project.slug.length % 7 + 1}<span> / SYSTEM</span></div></div>
+          <div className="panel-body"><div className="art-symbol"><Icon size={large ? 54 : 43} strokeWidth={1.35}/></div><div className="panel-lines"><i/><i/><i/></div></div>
         </div>
       <div className="art-caption"><small>{label}</small><strong>{line}</strong></div>
     </div>

@@ -38,7 +38,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header-inner">
         <a className="wordmark" href="#top" aria-label="Faizan Yousaf, back to top" onClick={() => setOpen(false)}>
-          <span className="mark-box">F<span>Y</span></span><span className="mark-text">faizan<span className="accent">.</span>dev</span>
+          <span className="mark-box">F<span>Y</span></span><span className="mark-text">Faizan<span className="accent"> Yousaf</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           {nav.map(item => <a href={item.href} key={item.href}>{item.text}</a>)}

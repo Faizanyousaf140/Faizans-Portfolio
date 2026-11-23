@@ -55,10 +55,10 @@ export function Contact() {
     <div className="container contact-shell">
       <div className="contact-intro"><span className="section-kicker"><span className="section-count">05</span> WHAT&apos;S NEXT?</span><span className="contact-star" aria-hidden="true">✳</span></div>
       <h2 id="contact-title">Have an idea?<br/><span>Let&apos;s build something</span> great<span className="contact-period">.</span></h2>
-      <p>I&apos;m interested in software engineering, full-stack development and applied AI opportunities. If my work resonates with you, I&apos;d love to hear about what you&apos;re building.</p>
+      <p>I&apos;m interested in engineering roles where I can build LLM applications and evaluate how agents behave. Email me with the role, the team and the problem you&apos;re working on.</p>
       <div className="contact-buttons"><a className="button button-dark" href={`mailto:${profile.email}?subject=Hello%20Faizan%20%E2%80%94%20let%27s%20connect`}>Start a conversation <ArrowUpRight size={19}/></a><button className="button button-contact-outline" type="button" onClick={copyEmail} aria-live="polite">{copied ? <Check size={17}/> : <Copy size={17}/>} {copied ? 'Email copied' : 'Copy email address'}</button></div>
-      <form className="contact-form" onSubmit={sendMessage} aria-label="Send Faizan a message" aria-busy={status === 'sending'} data-ph-no-capture>
-        <fieldset disabled={status === 'sending' || !configured}>
+      {configured && <form className="contact-form" onSubmit={sendMessage} aria-label="Send Faizan a message" aria-busy={status === 'sending'} data-ph-no-capture>
+        <fieldset disabled={status === 'sending'}>
           <legend>Send a message</legend>
           <div className="contact-form-grid">
             <label htmlFor="contact-name">Your name<input id="contact-name" name="from_name" autoComplete="name" required maxLength={120} placeholder="Your name" /></label>
@@ -70,11 +70,10 @@ export function Contact() {
           <button className="button button-dark" type="submit"><Send size={17} aria-hidden="true" />{status === 'sending' ? 'Sending…' : 'Send message'}</button>
         </fieldset>
         <div className="contact-form-status" role="status" aria-live="polite" aria-atomic="true">
-          {!configured && <p>The message form is currently unavailable. <a href={`mailto:${profile.email}`}>Email me directly</a>.</p>}
           {status === 'success' && <p>Thanks! Your message has been sent. I&apos;ll get back to you soon.</p>}
           {status === 'error' && <p>Your message could not be sent. Please check the fields and try again, or <a href={`mailto:${profile.email}`}>email me directly</a>.</p>}
         </div>
-      </form>
+      </form>}
       <div className="contact-bottom"><a href={`mailto:${profile.email}`}><Mail size={17}/> {profile.email}</a><div className="contact-socials"><a href={profile.github} target="_blank" rel="noopener noreferrer"><Github size={18}/> GitHub</a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={18}/> LinkedIn</a><a href={profile.huggingface} target="_blank" rel="noopener noreferrer">Hugging Face <ArrowRight size={17}/></a></div></div>
     </div>
   </section>;
