@@ -105,7 +105,7 @@ button { cursor: pointer; }
 .featured-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .featured-card { display: flex; flex-direction: column; background: #1b251d; border: 1px solid #364338; border-radius: 17px; overflow: hidden; transition: border-color .2s, transform .2s; }
 .featured-card:hover { border-color: #77905d; transform: translateY(-3px); }
-.featured-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr 1fr; min-height: 378px; }
+.featured-wide { grid-column: 1 / -1; min-height: 378px; }
 .featured-copy { padding: 28px 30px 27px; display: flex; flex-direction: column; }
 .featured-wide .featured-copy { padding: 38px 39px; }
 .featured-topline { display: flex; justify-content: space-between; color: #bdd0b4; font-size: 10px; font-weight: 750; letter-spacing: .12em; }

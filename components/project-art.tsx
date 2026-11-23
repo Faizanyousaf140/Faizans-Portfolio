@@ -10,7 +10,7 @@ const iconMap = {
 };
 
 const graphicLabel: Record<Project['visual'], [string, string]> = {
-  knowledge: ['AI / WORKSPACE', 'Context-aware search'],
+  knowledge: ['AI / WORKSPACE', 'Public frontend preview'],
   rental: ['PRODUCT / PLATFORM', 'Property operations'],
   document: ['MODEL / MULTIMODAL', 'Image → Markdown'],
   route: ['BACKEND / MAPS', 'Optimized fuel stops'],
@@ -26,7 +26,7 @@ const graphicLabel: Record<Project['visual'], [string, string]> = {
   vision: ['VISION / REPRESENTATIONS', 'Images into understanding'],
 };
 
-export function ProjectArt({ project, large = false }: { project: Project; large?: boolean }) {
+export function ProjectArt({ project, large = false, wide = false }: { project: Project; large?: boolean; wide?: boolean }) {
   const Icon = iconMap[project.visual];
   const [label, line] = graphicLabel[project.visual];
   const image = project.image;
@@ -42,7 +42,7 @@ export function ProjectArt({ project, large = false }: { project: Project; large
 
     return <figure className={`project-art art-${project.visual} has-project-image ${large ? 'art-large' : ''} ${project.imageKind === 'concept' ? 'has-concept-image' : ''}`}>
       <a className="project-image-link" href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`View full-size image: ${project.name}`}>
-        <Image className="project-screenshot" src={image.src} width={image.width} height={image.height} sizes="(max-width: 520px) 90vw, (max-width: 760px) 94vw, (max-width: 980px) 44vw, 590px" alt={alt} />
+        <Image className="project-screenshot" src={image.src} width={image.width} height={image.height} sizes={wide ? '(max-width: 520px) 90vw, (max-width: 760px) 94vw, (max-width: 1296px) calc(100vw - 96px), 1200px' : '(max-width: 520px) 90vw, (max-width: 760px) 94vw, (max-width: 980px) 44vw, 590px'} alt={alt} />
       </a>
       <figcaption className="art-image-caption">
         <div className="art-image-description"><small>{label}</small><strong>{line}</strong></div>

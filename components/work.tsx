@@ -22,7 +22,7 @@ function ProjectEvaluation({ project }: { project: Project }) {
 
 function FeaturedProject({ project, index }: { project: Project; index: number }) {
   return <article className={`featured-card ${index === 0 ? 'featured-wide' : ''}`}>
-    <ProjectArt project={project} large />
+    <ProjectArt project={project} large wide={index === 0} />
     <div className="featured-copy">
       <div className="featured-topline"><span>{project.eyebrow}</span><span className="feature-counter">0{index + 1} / 03</span></div>
       <h3>{project.name}</h3>
