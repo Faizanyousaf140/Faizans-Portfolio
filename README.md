@@ -27,6 +27,8 @@ At Deaimer, I work on coding-task preparation, Docker/Linux harnesses, tool call
 
 Next.js 16 App Router, React 19, TypeScript, Lucide, EmailJS and PostHog. The green design, animations, responsive images and reduced-motion support are preserved. Content lives in `data/portfolio.ts`, UI in `components/`, and styling in `app/globals.css`.
 
+Light and dark themes share semantic color variables. The header switch works on desktop and mobile, follows the system preference initially, and remembers an explicit choice in browser storage. A small head script applies the preference before page content paints. The project archive button has an explicit background and readable text in both themes.
+
 Use Node.js 22 or newer (minimum 20.9):
 
 ```bash
@@ -58,7 +60,7 @@ PostHog runs only in production when configured. Autocapture and session recordi
 
 ## Assets and repository hygiene
 
-- `public/images/faizan-newest.webp`: optimized latest portrait, served responsively by Next.js.
+- `public/images/faizan-blue-portrait.webp`: the owner's supplied blue-background portrait, optimized to 52 KB and served responsively by Next.js, with metadata removed. The original photo is unchanged.
 - `public/education/fast-nuces.webp`: official campus-hosted NUCES logo.
 - `public/certificates/`: four Coursera certificates, two internship documents and the HEC result. The public Digital Genei letter has personal phone/email/address redacted; the HEC preview omits the CNIC. Original local documents are unchanged.
 - `public/projects/`: supplied application screenshots, an actual AI Knowledge OS frontend preview, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).

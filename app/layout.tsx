@@ -30,7 +30,7 @@ const person = {
   name: profile.fullName,
   alternateName: profile.shortName,
   url: siteUrl,
-  image: new URL('/images/faizan-newest.webp', siteUrl).href,
+  image: new URL('/images/faizan-blue-portrait.webp', siteUrl).href,
   jobTitle: profile.jobTitle,
   description: profile.bio,
   sameAs: [profile.github, profile.linkedin, profile.huggingface],
@@ -39,6 +39,8 @@ const person = {
   knowsAbout: ['Machine learning', 'Full-stack software engineering', 'Natural language processing', 'LLM applications', 'Computer vision', 'Model fine-tuning', 'Retrieval-augmented generation', 'Coding-agent evaluation', 'Evaluation harnesses'],
 };
 
+const themeScript = `(function(){var theme='dark';try{var saved=localStorage.getItem('portfolio-theme');theme=saved==='light'||saved==='dark'?saved:matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}catch(e){theme=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.dataset.theme=theme;})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, '\\u003c') }} />{children}</body></html>;
+  return <html lang="en" data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, '\\u003c') }} />{children}</body></html>;
 }

@@ -1,5 +1,12 @@
 {
   "updated": "2026-11-23",
+  "profilePortrait": {
+    "path": "public/images/faizan-blue-portrait.webp",
+    "source": "Owner's faizan_Bg_blue.png, matching the attached blue-background portrait",
+    "sourceDimensions": [1230, 1278],
+    "outputDimensions": [1000, 1039],
+    "optimization": "WebP quality 87, 52248 bytes; EXIF metadata omitted. Resize and format conversion only; appearance and blue background preserved. The preceding portrait is backed up in ignored local-only/."
+  },
   "generatedConcepts": {
     "tool": "Built-in image_gen.imagegen",
     "displayLabel": "AI CONCEPT ILLUSTRATION",

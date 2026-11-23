@@ -71,3 +71,12 @@ Production EmailJS/PostHog settings and a real EmailJS delivery check remain out
 - [x] Added sourced VLM/test evidence, working ELD/Craftopia links and an authentic AI Knowledge OS starter-frontend screenshot with an accurate preview label. Retained honest labels on concept illustrations.
 - [x] Final lint, TypeScript and production build pass. An unconfigured production build was also tested: no form is rendered, and email/copy actions work. Dependency inputs are unchanged from the successful clean install and zero-vulnerability audit.
 - [ ] Production EmailJS/PostHog configuration and a real delivery check remain optional activation steps as described above. Additional project metrics and a VLM before/after example require authentic results rather than inferred numbers or generated proof.
+
+## Theme and portrait update - 23 November 2026
+
+- [x] Fixed archive-button contrast and added an accessible, persistent light/dark switch in the desktop and mobile header.
+- [x] Optimized the exact supplied blue-background portrait to a 52 KB WebP, preserving appearance and removing metadata. Original files remain unchanged; the previous optimized portrait is retained locally.
+- [x] Lint, TypeScript and production build pass; dependency inputs are unchanged.
+- [x] Both themes checked at 1440/980/768/390/320 pixels with readable text/buttons, functioning archive/navigation and no overflow, header overlap or runtime errors.
+- [x] Production checks verify keyboard controls, saved preferences, system changes, cross-tab synchronization, blocked storage and preference application before hydration.
+- [x] The latest agentic CV and existing environment files remain unchanged.

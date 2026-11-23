@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { profile } from '@/data/portfolio';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const nav = [
   { text: 'Projects', href: '#work' },
@@ -43,10 +44,13 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label="Main navigation">
           {nav.map(item => <a href={item.href} key={item.href}>{item.text}</a>)}
         </nav>
-        <a className="header-cta" href="#contact">Let&apos;s talk <ArrowUpRight size={15} aria-hidden="true" /></a>
-        <button ref={toggleRef} type="button" className="mobile-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(v => !v)}>
-          {open ? <X size={24}/> : <Menu size={24}/>}
-        </button>
+        <div className="header-actions">
+          <a className="header-cta" href="#contact">Let&apos;s talk <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <ThemeToggle />
+          <button ref={toggleRef} type="button" className="mobile-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(v => !v)}>
+            {open ? <X size={24}/> : <Menu size={24}/>}
+          </button>
+        </div>
       </div>
       {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation">
         {nav.map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.text}<ArrowUpRight size={16}/></a>)}

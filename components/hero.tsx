@@ -26,7 +26,7 @@ export function Hero() {
         <div className="hero-visual">
           <div className="portrait-halo" aria-hidden="true"/>
           <div className="portrait-frame">
-            <div className="portrait-photo"><Image src="/images/faizan-newest.webp" alt="Muhammad Faizan Yousaf" fill preload sizes="(max-width: 520px) 82vw, (max-width: 760px) 436px, (max-width: 980px) 40vw, 440px" /></div>
+            <div className="portrait-photo"><Image src="/images/faizan-blue-portrait.webp" alt="Muhammad Faizan Yousaf in a black suit against a blue background" fill preload sizes="(max-width: 520px) 82vw, (max-width: 760px) 436px, (max-width: 980px) 40vw, 440px" /></div>
             <div className="portrait-overlay"/>
             <div className="portrait-bottom"><span>ENGINEERING</span><span className="portrait-star"><Sparkles size={15}/></span><span>+ INTELLIGENCE</span></div>
           </div>
