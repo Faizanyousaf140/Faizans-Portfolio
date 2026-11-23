@@ -34,8 +34,8 @@ Browser evidence and the local smoke-test script are in ignored `test-results/`.
 - [x] Added the three EmailJS identifiers from ignored `.env.local` as encrypted Vercel production variables. No environment values were committed or printed.
 - [ ] Optional: add the existing PostHog public ingestion settings to Vercel production and verify dashboard ingestion.
 - [x] Redeployed commit `48720c9` after adding the variables. Both production domains render the form, and “Start a conversation” scrolls to it and focuses the name field.
-- [ ] Reconnect the existing Gmail service in EmailJS. A real submission from the deployed form reached EmailJS on 24 November 2026 but returned HTTP 412: `Gmail_API: Invalid grant. Please reconnect your Gmail account`. Google account authorization requires the owner; preserve the current service ID when reconnecting.
-- [ ] After reconnecting Gmail, confirm a real contact submission arrives and verify the template recipient and Reply-To. Delivery has not yet been confirmed.
+- [x] Replaced the failing Gmail service with the owner's newly connected and successfully tested EmailJS Gmail service on 24 November 2026. Updated only the service identifier in ignored `.env.local` and encrypted Vercel production settings, then rebuilt production. Both public domains point to the successful deployment.
+- [x] Submitted one real message from the deployed form using the new service and existing template/public key. EmailJS returned HTTP 200 `OK`; the owner confirmed receipt of the test email. Verified the submitted Reply-To, success message, form reset and absence of browser runtime errors.
 - [ ] Verify production PostHog events in its dashboard and confirm the deployed CV, portrait and mobile layout.
 
 Existing content review: confirm the Deaimer start month (June versus July 2026) when convenient; this update preserves the current content.
@@ -91,3 +91,12 @@ Production EmailJS/PostHog settings and a real EmailJS delivery check remain out
 - [x] Both domains serve the form. The secondary domain also passes mobile focus/overflow/runtime checks and retains the exact approved CV bytes.
 - [x] One explicit live delivery attempt reached the configured EmailJS service and template. Recorded the provider's HTTP 412 Gmail authorization error and requested reconnection before another real send.
 - [x] Environment files, authentication state, local helpers and QA artifacts remain outside Git. The old portfolio is unchanged.
+
+## Gmail service recovery - 24 November 2026
+
+- [x] The owner created a fresh Gmail service, approved its sending permission and confirmed its dashboard test succeeded.
+- [x] Updated the service identifier locally and in Vercel production. Other local settings, the template and public key were preserved. No configuration values were committed.
+- [x] Vercel production rebuild completed successfully and retained both public aliases.
+- [x] A real submission from the primary live form used the new service and returned HTTP 200 `OK`. The form displayed success and reset its fields; no browser runtime errors occurred.
+- [x] The owner confirmed the test email arrived. The earlier HTTP 412 sending blocker is resolved.
+- [x] The secondary production domain responds successfully and continues to render the form and its conversation action. Application code and dependencies are unchanged from the passing lint, TypeScript and browser checks.

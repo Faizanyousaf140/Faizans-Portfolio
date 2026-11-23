@@ -143,3 +143,10 @@
 - Lint, TypeScript and production build pass. Local production and live Chromium checks pass at 1440/390/320 pixels in both themes for form navigation, required/email validation, honeypot, duplicate-send protection, success/reset, failure recovery, overflow and runtime errors. Regression transports are intercepted. Dependency inputs and the CV are unchanged.
 - Commit `48720c9` deployed successfully through the existing Git integration; both production domains render the configured form. The secondary domain also passed a mobile form-focus check and returned the exact approved CV bytes.
 - One explicit real submission from the deployed form reached the original EmailJS service and template but returned HTTP 412: `Gmail_API: Invalid grant. Please reconnect your Gmail account`. Requested owner authorization to reconnect the existing Gmail service before another live attempt. Inbox delivery has not been confirmed. Local helpers and evidence remain ignored, and the old portfolio is unchanged.
+
+## Gmail delivery recovery - 24 November 2026
+
+- The owner created and tested a new Gmail service in EmailJS and supplied its public service identifier. Updated that identifier in ignored `.env.local` and encrypted Vercel production settings while preserving the existing template, public key and other settings. No identifier values were committed or printed.
+- Rebuilt production through the existing Vercel project. The deployment reached `READY` and retained both portfolio domains. Application code, dependencies, design, content and CV are unchanged.
+- Sent one real message from the primary deployed contact form. The browser payload matched the new local service setting and existing template/public key, included the expected Reply-To, and received HTTP 200 `OK`. The form displayed its success message, reset its fields and produced no runtime errors. The owner then confirmed the email arrived, resolving the earlier Gmail delivery blocker.
+- Verified the secondary domain returns HTTP 200 and renders the contact form and conversation link. Local test evidence and credentials remain excluded from Git; the old portfolio is unchanged.
