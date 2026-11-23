@@ -54,7 +54,7 @@ Set these in ignored `.env.local` for development and in Vercel for production:
 
 These client identifiers are public by design and embedded at build time. Private API keys must never use `NEXT_PUBLIC_`. Environment files stay out of Git; `.env.example` contains placeholders only. Rebuild after changing production values.
 
-The EmailJS form appears only when all three EmailJS identifiers are configured. Otherwise, the contact section provides working email and copy-address actions. The form supplies `from_name`, `from_email`, `subject`, `message` and `reply_to`, with validation, a honeypot, duplicate-send protection, local throttling and failure recovery. Confirm the recipient, Reply-To and allowed domains in EmailJS.
+The EmailJS form appears when all three EmailJS identifiers are configured. “Start a conversation” scrolls to the form and focuses the name field; reduced-motion preferences are respected. Otherwise, the contact section provides email and copy-address actions. The form supplies `from_name`, `from_email`, `subject`, `message` and `reply_to`, with validation, a honeypot, duplicate-send protection, local throttling and failure recovery. The existing identifiers are configured in Vercel production as encrypted variables. Confirm the recipient, Reply-To and allowed domains in EmailJS when changing its template or connected email account.
 
 PostHog runs only in production when configured. Autocapture and session recordings are disabled, contact text is not captured, and analytics failures do not interrupt the site.
 
@@ -87,4 +87,4 @@ Browser QA covers desktop/tablet/mobile layouts, filters, implementation notes, 
 
 Push to `main` in `Faizanyousaf140/Faizans-Portfolio` to trigger the existing Vercel integration. `vercel.json` selects Next.js, `npm ci`, `npm run build` and `.next`. Keep Vercel Root Directory at the repository root.
 
-Production: [faizanyousafs-portfolio.vercel.app](https://faizanyousafs-portfolio.vercel.app) and [faizans-portfolio-seven.vercel.app](https://faizans-portfolio-seven.vercel.app). The first is canonical. Production EmailJS/PostHog settings still need to be added in Vercel, followed by a rebuild and a real delivery check.
+Production: [faizanyousafs-portfolio.vercel.app](https://faizanyousafs-portfolio.vercel.app) and [faizans-portfolio-seven.vercel.app](https://faizans-portfolio-seven.vercel.app). The first is canonical. EmailJS is configured in Vercel production; changes to its identifiers require a rebuild. Optional production PostHog activation and dashboard verification remain separate steps.

@@ -1,13 +1,14 @@
 'use client';
 
 import { useRef, useState, type FormEvent } from 'react';
-import { ArrowRight, ArrowUpRight, Check, Copy, Github, Linkedin, Mail, Send } from 'lucide-react';
+import { ArrowRight, Check, Copy, Github, Linkedin, Mail, Send } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const sending = useRef(false);
+  const nameInput = useRef<HTMLInputElement>(null);
   const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -55,13 +56,18 @@ export function Contact() {
     <div className="container contact-shell">
       <div className="contact-intro"><span className="section-kicker"><span className="section-count">05</span> WHAT&apos;S NEXT?</span><span className="contact-star" aria-hidden="true">✳</span></div>
       <h2 id="contact-title">Have an idea?<br/><span>Let&apos;s build something</span> great<span className="contact-period">.</span></h2>
-      <p>I&apos;m open to AI/ML engineering, full-stack development and applied AI roles. If your team is building web products, NLP systems or LLM applications, email me about the role and the problem you&apos;re solving.</p>
-      <div className="contact-buttons"><a className="button button-dark" href={`mailto:${profile.email}?subject=Hello%20Faizan%20%E2%80%94%20let%27s%20connect`}>Start a conversation <ArrowUpRight size={19}/></a><button className="button button-contact-outline" type="button" onClick={copyEmail} aria-live="polite">{copied ? <Check size={17}/> : <Copy size={17}/>} {copied ? 'Email copied' : 'Copy email address'}</button></div>
-      {configured && <form className="contact-form" onSubmit={sendMessage} aria-label="Send Faizan a message" aria-busy={status === 'sending'} data-ph-no-capture>
+      <p>I&apos;m open to AI/ML engineering, full-stack development and applied AI roles. If your team is building web products, NLP systems or LLM applications, send me a message about the role and the problem you&apos;re solving.</p>
+      <div className="contact-buttons"><a className="button button-dark" href={configured ? '#contact-form' : `mailto:${profile.email}?subject=Hello%20Faizan%20%E2%80%94%20let%27s%20connect`} onClick={configured ? event => {
+        event.preventDefault();
+        nameInput.current?.form?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        nameInput.current?.focus({ preventScroll: true });
+      } : undefined}>Start a conversation <Mail size={19} aria-hidden="true"/></a><button className="button button-contact-outline" type="button" onClick={copyEmail} aria-live="polite">{copied ? <Check size={17}/> : <Copy size={17}/>} {copied ? 'Email copied' : 'Copy email address'}</button></div>
+      {configured && <form id="contact-form" className="contact-form" onSubmit={sendMessage} aria-label="Send Faizan a message" aria-describedby="contact-form-note" aria-busy={status === 'sending'} data-ph-no-capture>
         <fieldset disabled={status === 'sending'}>
           <legend>Send a message</legend>
+          <p id="contact-form-note">Your message goes to my inbox. I&apos;ll reply to the email address you provide.</p>
           <div className="contact-form-grid">
-            <label htmlFor="contact-name">Your name<input id="contact-name" name="from_name" autoComplete="name" required maxLength={120} placeholder="Your name" /></label>
+            <label htmlFor="contact-name">Your name<input ref={nameInput} id="contact-name" name="from_name" autoComplete="name" required maxLength={120} placeholder="Your name" /></label>
             <label htmlFor="contact-email">Email address<input id="contact-email" name="from_email" type="email" autoComplete="email" required maxLength={254} placeholder="you@example.com" /></label>
             <label className="contact-field-wide" htmlFor="contact-subject">Subject<input id="contact-subject" name="subject" required maxLength={200} placeholder="What would you like to work on?" /></label>
             <label className="contact-field-wide" htmlFor="contact-message">Message<textarea id="contact-message" name="message" required minLength={10} maxLength={5000} rows={5} placeholder="Tell me a little about your idea or opportunity." /></label>

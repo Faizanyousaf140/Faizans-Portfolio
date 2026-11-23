@@ -30,8 +30,9 @@ Browser evidence and the local smoke-test script are in ignored `test-results/`.
 - [x] Existing Vercel Git integration completed a successful production deployment. Both public domains now serve the new Next.js homepage, portrait and CV.
 - [x] Verified the deployed site in desktop and mobile Chromium: portrait loads, PDF matches the approved CV, navigation works, and there is no horizontal overflow or runtime error.
 - [x] `vercel.json` supplies the successful Next.js install/build/output settings.
-- [ ] Refresh Vercel CLI authentication to manage project environment variables. A saved CLI login exists, but the API rejects its expired token; device sign-in is required.
-- [ ] Add the six variables from `.env.local` to the Vercel production environment through its secure settings. Do not commit that file. Public client identifiers are embedded at build time, so redeploy after setting them.
+- [x] Refreshed Vercel CLI authentication through owner-approved device sign-in on 24 November 2026 and verified the connected GitHub repository before changing project settings.
+- [x] Added the three EmailJS identifiers from ignored `.env.local` as encrypted Vercel production variables. No environment values were committed or printed.
+- [ ] Optional: add the existing PostHog public ingestion settings to Vercel production and verify dashboard ingestion.
 - [ ] Redeploy after adding environment variables. Until then, the contact section shows direct email and copy-address actions; the unconfigured form is omitted.
 - [ ] Confirm a real contact submission arrives using the configured EmailJS account, template recipient, Reply-To and allowed domains.
 - [ ] Verify production PostHog events in its dashboard and confirm the deployed CV, portrait and mobile layout.
