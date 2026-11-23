@@ -55,7 +55,7 @@ export function Contact() {
     <div className="container contact-shell">
       <div className="contact-intro"><span className="section-kicker"><span className="section-count">05</span> WHAT&apos;S NEXT?</span><span className="contact-star" aria-hidden="true">✳</span></div>
       <h2 id="contact-title">Have an idea?<br/><span>Let&apos;s build something</span> great<span className="contact-period">.</span></h2>
-      <p>I&apos;m interested in engineering roles where I can build LLM applications and evaluate how agents behave. Email me with the role, the team and the problem you&apos;re working on.</p>
+      <p>I&apos;m open to AI/ML engineering, full-stack development and applied AI roles. If your team is building web products, NLP systems or LLM applications, email me about the role and the problem you&apos;re solving.</p>
       <div className="contact-buttons"><a className="button button-dark" href={`mailto:${profile.email}?subject=Hello%20Faizan%20%E2%80%94%20let%27s%20connect`}>Start a conversation <ArrowUpRight size={19}/></a><button className="button button-contact-outline" type="button" onClick={copyEmail} aria-live="polite">{copied ? <Check size={17}/> : <Copy size={17}/>} {copied ? 'Email copied' : 'Copy email address'}</button></div>
       {configured && <form className="contact-form" onSubmit={sendMessage} aria-label="Send Faizan a message" aria-busy={status === 'sending'} data-ph-no-capture>
         <fieldset disabled={status === 'sending'}>

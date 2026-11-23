@@ -6,18 +6,18 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://faizanyousafs-portf
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: 'Faizan Yousaf — Software Engineer, AI/LLM Applications & Evaluation', template: '%s | Faizan Yousaf' },
-  description: 'Software engineer building LLM applications and evaluation harnesses for coding agents. Explore full-stack products, retrieval systems, model fine-tuning and AI evaluation work at Deaimer.',
+  title: { default: 'Faizan Yousaf — AI/ML Engineer & Full-Stack Developer', template: '%s | Faizan Yousaf' },
+  description: 'AI/ML engineer and full-stack developer building web applications, machine learning pipelines, NLP systems and LLM features with Next.js, TypeScript and Python.',
   authors: [{ name: 'Muhammad Faizan Yousaf' }],
   creator: 'Muhammad Faizan Yousaf',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website', url: '/', siteName: 'Faizan Yousaf — Portfolio',
-    title: 'Faizan Yousaf — Software Engineer, AI/LLM Applications & Evaluation',
-    description: 'LLM applications, coding-agent evaluation and the software behind them.',
+    title: 'Faizan Yousaf — AI/ML Engineer & Full-Stack Developer',
+    description: 'Full-stack web products, machine learning, NLP and LLM applications.',
     images: [{ url: '/og-cover.png', width: 1200, height: 630, alt: 'Faizan Yousaf portfolio' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Faizan Yousaf — Software Engineer, AI/LLM Applications & Evaluation', images: ['/og-cover.png'] },
+  twitter: { card: 'summary_large_image', title: 'Faizan Yousaf — AI/ML Engineer & Full-Stack Developer', images: ['/og-cover.png'] },
   robots: { index: true, follow: true },
 };
 
@@ -36,7 +36,7 @@ const person = {
   sameAs: [profile.github, profile.linkedin, profile.huggingface],
   worksFor: { '@type': 'Organization', name: 'Deaimer', url: 'https://www.deaimer.com/' },
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'FAST National University of Computer and Emerging Sciences', url: 'https://nu.edu.pk/' },
-  knowsAbout: ['LLM applications', 'Coding-agent evaluation', 'Evaluation harnesses', 'Retrieval-augmented generation', 'Full-stack software engineering', 'Natural language processing'],
+  knowsAbout: ['Machine learning', 'Full-stack software engineering', 'Natural language processing', 'LLM applications', 'Computer vision', 'Model fine-tuning', 'Retrieval-augmented generation', 'Coding-agent evaluation', 'Evaluation harnesses'],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

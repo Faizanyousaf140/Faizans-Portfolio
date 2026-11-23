@@ -1,8 +1,8 @@
-# Faizan Yousaf — Software Engineer, AI/LLM Applications & Evaluation
+# Faizan Yousaf — AI/ML Engineer & Full-Stack Developer
 
 [Portfolio](https://faizanyousafs-portfolio.vercel.app) · [GitHub](https://github.com/Faizanyousaf140) · [LinkedIn](https://www.linkedin.com/in/faizan-yousaf1/) · [Hugging Face](https://huggingface.co/Faizan11112/spaces)
 
-I build LLM applications and evaluation harnesses for coding agents. I am a FAST-NUCES computer science graduate and Software Engineer — AI Evaluation at Deaimer, preparing coding tasks, reference solutions, reproducible environments and automated verifiers. My product work combines Next.js, TypeScript and Python with retrieval, model fine-tuning and NLP.
+I build full-stack applications and AI/ML systems, from Next.js/TypeScript interfaces and Python/Node.js APIs to NLP, retrieval and model fine-tuning. I am a FAST-NUCES computer science graduate, interested in AI/ML engineering, full-stack development and applied AI roles. At Deaimer, my official title is Software Engineer — AI Evaluation; I contribute coding tasks, reference solutions and automated verifiers to training and evaluation workflows.
 
 ## Selected work
 
@@ -17,7 +17,7 @@ I build LLM applications and evaluation harnesses for coding agents. I am a FAST
 | Applied ML | Loan Approval Predictor: data preparation, classifier comparison and prediction interfaces |
 | Product and backend | RentEase PK, Fuel Route Optimizer, ELD Trip Planner, Craftopia.pk and authentication/CI automation |
 
-The homepage shows six selected projects. An expandable archive retains all 20, with eight category filters covering LLMs/RAG, NLP, generative AI, computer vision, AI/ML, full-stack, backend and testing. The Urdu-to-Roman-Urdu study is attributed as an adapted/forked academic project. AgentQA Cloud is marked in development, with planned features identified explicitly. Cards without screenshots use text rather than decorative placeholders.
+The homepage shows six selected projects spanning full-stack AI, multimodal fine-tuning, speech/NLP, classical machine learning, web development and backend engineering. Loan Approval Predictor is included in this default selection; Clinical Notes RAG remains in the archive. The expandable archive retains all 20, with AI/ML and full-stack first among eight category filters. The Urdu-to-Roman-Urdu study is attributed as an adapted/forked academic project. AgentQA Cloud is marked in development, with planned features identified explicitly. Cards without screenshots use text rather than decorative placeholders.
 
 The VLM card links its repository-reported test ROUGE-L of 0.57 (validation: 0.63). The Fuel Route Optimizer links its documented 178-test run from 17 November 2026. These are repository-reported results, not benchmarks independently rerun during portfolio maintenance. Working ELD Trip Planner and Craftopia demos are linked. AI Knowledge OS is labeled as a starter frontend preview, separate from the API/RAG implementation in its source; its card uses a real browser capture. The VLM demo may need to wake before inference is available.
 

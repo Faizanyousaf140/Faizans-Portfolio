@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, Github, Layers3 } from 'lucide-react';
 import { profile, projects, type Project, type ProjectCategory } from '@/data/portfolio';
 import { ProjectArt } from '@/components/project-art';
 
-const choices = ['All', 'LLMs / RAG', 'NLP', 'Generative AI', 'Computer Vision', 'AI / ML', 'Full-stack', 'Backend', 'Testing'] as const;
+const choices = ['All', 'AI / ML', 'Full-stack', 'LLMs / RAG', 'NLP', 'Generative AI', 'Computer Vision', 'Backend', 'Testing'] as const;
 type CategoryFilter = 'All' | ProjectCategory;
 
 function ProjectActions({ project }: { project: Project }) {
@@ -64,11 +64,11 @@ export function Work() {
     <div className="container">
       <div className="section-heading section-heading-split">
         <div><div className="section-kicker"><span className="section-count">01</span> SELECTED WORK</div><h2 id="work-title">Things I&apos;ve <span className="section-heading-accent">built.</span></h2></div>
-        <p>Full-stack AI products, LLM fine-tuning, retrieval systems, NLP and generative models, alongside the APIs and tests that support them.</p>
+        <p>Web products, machine learning pipelines, LLM applications and NLP projects, with the APIs, interfaces and tests that make them usable.</p>
       </div>
       <div className="featured-grid">{featured.map((p,i) => <FeaturedProject key={p.slug} project={p} index={i}/>)}</div>
       <div className="archive-heading">
-        <div><span className="archive-small">PRODUCTS, RETRIEVAL & BACKEND SYSTEMS</span><h3>More selected work <Layers3 size={24}/></h3></div>
+        <div><span className="archive-small">AI / ML, FULL-STACK & BACKEND</span><h3>More selected work <Layers3 size={24}/></h3></div>
         <a href={profile.github} className="text-link" target="_blank" rel="noopener noreferrer">All GitHub repositories <ArrowUpRight size={16}/></a>
       </div>
       <div className="filter-tabs" role="group" aria-label="Filter projects by category">

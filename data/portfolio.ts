@@ -33,7 +33,7 @@ export interface Project {
 export const profile = {
   fullName: 'Muhammad Faizan Yousaf',
   shortName: 'Faizan Yousaf',
-  role: 'Software Engineer · AI/LLM Applications & Evaluation',
+  role: 'AI/ML Engineer · Full-Stack Developer',
   jobTitle: 'Software Engineer — AI Evaluation',
   location: 'Faisalabad, Pakistan',
   email: 'faizanyousaf140@gmail.com',
@@ -41,7 +41,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/faizan-yousaf1/',
   huggingface: 'https://huggingface.co/Faizan11112/spaces',
   resume: '/Faizan_Yousaf_Software_Engineer.pdf',
-  bio: 'I build LLM applications and evaluation harnesses for coding agents. At Deaimer, I prepare coding tasks, reference solutions and automated verifiers. My product work combines Next.js, TypeScript and Python with retrieval and model fine-tuning.',
+  bio: 'I build full-stack applications and AI/ML systems, from Next.js interfaces and Python APIs to NLP, retrieval and model fine-tuning. At Deaimer, I also contribute coding tasks and evaluation harnesses for AI agents.',
 };
 
 export const projects: Project[] = [
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'clinical-notes-rag', name: 'Clinical Notes RAG', eyebrow: 'AI / RETRIEVAL',
-    category: 'LLMs / RAG', status: 'Completed', selected: true,
+    category: 'LLMs / RAG', status: 'Completed',
     description: 'Evidence-grounded question answering over clinical research notes.',
     detail: 'Retrieves relevant MIMIC-IV-Ext DiReCT passages with embeddings and FAISS, then provides supporting context alongside generated answers. Research prototype; not a medical device.',
     stack: ['Python', 'FAISS', 'Sentence Transformers', 'LLMs'],
@@ -206,7 +206,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'loan-approval-predictor', name: 'Loan Approval Predictor', eyebrow: 'APPLIED ML / CLASSIFICATION',
-    category: 'AI / ML', status: 'Completed',
+    category: 'AI / ML', status: 'Completed', selected: true,
     description: 'A tabular ML workflow from data preparation to an interactive prediction interface.',
     detail: 'Handles missing values, encodes features and compares scikit-learn classifiers with cross-validation and hyperparameter search; includes Streamlit and CLI prediction interfaces.',
     stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
@@ -312,8 +312,8 @@ export const research = [
 export const skills = [
   { title: 'Frontend engineering', tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS'] },
   { title: 'Backend & systems', tags: ['Python', 'Django REST', 'FastAPI', 'Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MongoDB'] },
+  { title: 'AI/ML & NLP', tags: ['PyTorch', 'Scikit-learn', 'Transformers', 'BERT', 'T5 / BART', 'Whisper', 'GANs', 'Diffusion'] },
   { title: 'GenAI & LLM engineering', tags: ['RAG', 'FAISS', 'Hugging Face', 'Qwen2-VL', 'QLoRA / PEFT', 'Tool Calling'] },
-  { title: 'NLP & machine learning', tags: ['PyTorch', 'Transformers', 'BERT', 'T5 / BART', 'Whisper', 'Scikit-learn', 'GANs', 'Diffusion'] },
   { title: 'Agent tools & evaluation', tags: ['GPT', 'Claude', 'Codex', 'Claude Code', 'Evaluation Harnesses', 'Tool Calling', 'Coding-task Design'] },
   { title: 'Testing & delivery', tags: ['Docker', 'Linux', 'pytest', 'Git', 'Jenkins', 'API Testing'] },
 ];
