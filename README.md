@@ -83,7 +83,7 @@ npm run build
 npm run start
 ```
 
-Browser QA covers desktop/tablet/mobile layouts, filters, implementation notes, images, certificates, navigation and CV downloads. Email transport tests intercept responses; they do not send messages. See `DEPLOYMENT_CHECKLIST.md` for checks and outstanding settings; `CONTENT_AUDIT.md` records content provenance and corrections.
+Browser QA covers desktop/tablet/mobile layouts, filters, implementation notes, images, certificates, navigation and CV downloads. Contact regression tests intercept responses; a real production delivery check is a separate explicit operation. See `DEPLOYMENT_CHECKLIST.md` for checks and outstanding settings; `CONTENT_AUDIT.md` records content provenance and corrections.
 
 Push to `main` in `Faizanyousaf140/Faizans-Portfolio` to trigger the existing Vercel integration. `vercel.json` selects Next.js, `npm ci`, `npm run build` and `.next`. Keep Vercel Root Directory at the repository root.
 

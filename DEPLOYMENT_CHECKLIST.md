@@ -1,4 +1,4 @@
-# Verification and deployment — updated 23 November 2026
+# Verification and deployment — updated 24 November 2026
 
 ## Completed locally
 
@@ -33,8 +33,9 @@ Browser evidence and the local smoke-test script are in ignored `test-results/`.
 - [x] Refreshed Vercel CLI authentication through owner-approved device sign-in on 24 November 2026 and verified the connected GitHub repository before changing project settings.
 - [x] Added the three EmailJS identifiers from ignored `.env.local` as encrypted Vercel production variables. No environment values were committed or printed.
 - [ ] Optional: add the existing PostHog public ingestion settings to Vercel production and verify dashboard ingestion.
-- [ ] Redeploy after adding environment variables. Until then, the contact section shows direct email and copy-address actions; the unconfigured form is omitted.
-- [ ] Confirm a real contact submission arrives using the configured EmailJS account, template recipient, Reply-To and allowed domains.
+- [x] Redeployed commit `48720c9` after adding the variables. Both production domains render the form, and “Start a conversation” scrolls to it and focuses the name field.
+- [ ] Reconnect the existing Gmail service in EmailJS. A real submission from the deployed form reached EmailJS on 24 November 2026 but returned HTTP 412: `Gmail_API: Invalid grant. Please reconnect your Gmail account`. Google account authorization requires the owner; preserve the current service ID when reconnecting.
+- [ ] After reconnecting Gmail, confirm a real contact submission arrives and verify the template recipient and Reply-To. Delivery has not yet been confirmed.
 - [ ] Verify production PostHog events in its dashboard and confirm the deployed CV, portrait and mobile layout.
 
 Existing content review: confirm the Deaimer start month (June versus July 2026) when convenient; this update preserves the current content.
@@ -81,3 +82,12 @@ Production EmailJS/PostHog settings and a real EmailJS delivery check remain out
 - [x] Both themes checked at 1440/980/768/390/320 pixels with readable text/buttons, functioning archive/navigation and no overflow, header overlap or runtime errors.
 - [x] Production checks verify keyboard controls, saved preferences, system changes, cross-tab synchronization, blocked storage and preference application before hydration.
 - [x] The latest agentic CV and existing environment files remain unchanged.
+
+## Contact activation - 24 November 2026
+
+- [x] Saved the existing EmailJS identifiers as encrypted Vercel production variables after owner-approved device authentication; verified the project is linked to `Faizanyousaf140/Faizans-Portfolio`.
+- [x] Lint, TypeScript and production build pass. Dependency inputs are unchanged.
+- [x] Local production and deployed Chromium tests pass at 1440/390/320 pixels in both themes: form navigation and focus, required/email validation, honeypot, duplicate protection, success/reset and failure/message retention. Regression transport is intercepted, so these tests do not send email.
+- [x] Both domains serve the form. The secondary domain also passes mobile focus/overflow/runtime checks and retains the exact approved CV bytes.
+- [x] One explicit live delivery attempt reached the configured EmailJS service and template. Recorded the provider's HTTP 412 Gmail authorization error and requested reconnection before another real send.
+- [x] Environment files, authentication state, local helpers and QA artifacts remain outside Git. The old portfolio is unchanged.
