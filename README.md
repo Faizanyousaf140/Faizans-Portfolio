@@ -64,7 +64,7 @@ PostHog runs only in production when configured. Autocapture and session recordi
 - `public/projects/`: supplied application screenshots, an actual AI Knowledge OS frontend preview, labeled overview illustrations from the old portfolio, a repository-sourced GAN training comparison and three generated concept illustrations. Generated images are visibly labeled; sources, exact prompts and output paths are in [docs/asset-provenance.json](docs/asset-provenance.json).
 
 - `public/companies/` and `public/research/`: Deaimer logo and original article covers.
-- `public/Faizan_Yousaf_Software_Engineer.pdf`: reviewed one-page CV, reconciled with the site on 23 November 2026. It uses the confirmed Deaimer title, certificate dates and concurrent part-time context, and retains the owner's approved phone number. `/resume.pdf` is a compatibility URL with identical bytes.
+- `public/Faizan_Yousaf_Software_Engineer.pdf`: reviewed one-page CV, reconciled with the site on 23 November 2026. It balances AI/ML and full-stack development with agentic AI, tool calling and coding-agent evaluation experience. It uses the confirmed Deaimer title, certificate dates and concurrent part-time context, and retains the owner's approved phone number. `/resume.pdf` is a compatibility URL with identical bytes.
 
 Project and certificate images use `{ src, width, height }` in `data/portfolio.ts` to preserve their original proportions. Project images fill the card width, captions and artwork labels sit below them, and each image opens at full size. The project archive uses two columns on larger screens and one on phones. Certificate and HEC previews also use their natural proportions.
 
